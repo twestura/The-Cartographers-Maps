@@ -42,16 +42,15 @@ The particular version for this tournament is based on the version in Aoe2 DE fr
 
 The best circus in town.
 The map was originally included by Ensemble Studios in the Conquerors Expansion.
-I've mostly rewritten this version from scratch.
+
+This particular script is rewritten mostly from scratch.
 The technique of generating forest lands in a circle is inspired by ideas seen in various Arena versions by Chrazini (e.g. Clown Arena).
 
 ### Black Forest
 
-The original BF is a classic Aoe2 map from the original game, updated in AoC to include an additional South American jungle biome.
-Usually BF is a 4v4 map, and the Rage Forest community maintains one of the most popular versions.
-
-I rewrote this version, basing it mostly off of the version from AoC (in particular I do not use any of DE's Generating Objects code like Rage Forest does).
-Most noteworth is the attempt to balance ponds by creating them in Land Generation rather than in Terrain Generation.
+The original BF is a classic Aoe2 map from the original game, updated in AoC to include an additional South American jungle biome. Usually BF is a 4v4 map, and the Rage Forest community maintains one of the most popular versions.
+This particular script is a complete rewrite, most closely based off of the version from AoC (in particular it does not use any of DE's Generating Objects code like Rage Forest's script does).
+Most noteworthy is the attempt to balance ponds by creating them in Land Generation rather than in Terrain Generation.
 
 ### Colosseum
 
