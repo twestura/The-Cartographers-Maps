@@ -1,0 +1,4086 @@
+/*
+ * "The Snake" for The Cartographers.
+ * Idea by the Viper, script by T-West, October 2023.
+ */
+#const REED 1350
+#const RAINFOREST_GRASS 83
+#const HERDABLE_A 1243
+#const STRAGGLER 1146
+start_random
+percent_chance 50 #define FLIP
+end_random
+#const PHOFF 649
+#const PHON 1291
+#const TERRAIN_BLOCKER 1613
+#const TEMPORARY_REVEALER 651
+#const TRIBUTE_INEFFICIENCY 46
+start_random
+percent_chance 50 #const SHEP0 590
+percent_chance 50 #const SHEP0 592
+end_random
+start_random
+percent_chance 50 #const SHEP1 590
+percent_chance 50 #const SHEP1 592
+end_random
+start_random
+percent_chance 50 #const SHEP2 590
+percent_chance 50 #const SHEP2 592
+end_random
+start_random
+percent_chance 50 #const SHEP3 590
+percent_chance 50 #const SHEP3 592
+end_random
+start_random
+percent_chance 50 #const SHEP4 590
+percent_chance 50 #const SHEP4 592
+end_random
+start_random
+percent_chance 50 #const SHEP5 590
+percent_chance 50 #const SHEP5 592
+end_random
+start_random
+percent_chance 50 #const LUMBERJACK0 123
+percent_chance 50 #const LUMBERJACK0 218
+end_random
+start_random
+percent_chance 50 #const LUMBERJACK1 123
+percent_chance 50 #const LUMBERJACK1 218
+end_random
+start_random
+percent_chance 50 #const LUMBERJACK2 123
+percent_chance 50 #const LUMBERJACK2 218
+end_random
+<PLAYER_SETUP>
+direct_placement
+ai_info_map_type VALLEY 0 0 0
+behavior_version 1
+effect_amount SET_ATTRIBUTE PHOFF ATTR_DEAD_ID -1
+effect_amount SET_ATTRIBUTE PHOFF ATTR_TERRAIN_ID 0
+effect_amount SET_ATTRIBUTE PHOFF ATTR_LINE_OF_SIGHT 0
+effect_amount SET_ATTRIBUTE PHOFF ATTR_HITPOINTS 0
+effect_amount SET_ATTRIBUTE PHOFF ATTR_STORAGE_VALUE 0
+effect_amount SET_ATTRIBUTE PHON ATTR_DEAD_ID -1
+effect_amount SET_ATTRIBUTE PHON ATTR_TERRAIN_ID 0
+effect_amount SET_ATTRIBUTE PHON ATTR_LINE_OF_SIGHT 0
+effect_amount SET_ATTRIBUTE PHON ATTR_HITPOINTS 0
+effect_amount SET_ATTRIBUTE PHON ATTR_STORAGE_VALUE 0
+effect_amount GAIA_SET_ATTRIBUTE HERDABLE_A ATTR_HITPOINTS 0
+effect_amount SET_ATTRIBUTE TEMPORARY_REVEALER ATTR_DEAD_ID -1
+effect_amount SET_ATTRIBUTE TEMPORARY_REVEALER ATTR_HITPOINTS 0
+effect_amount SET_ATTRIBUTE TEMPORARY_REVEALER ATTR_LINE_OF_SIGHT 18
+effect_amount MOD_RESOURCE AMOUNT_STARTING_WOOD ATTR_ADD -30
+effect_amount MOD_RESOURCE AMOUNT_STARTING_FOOD ATTR_ADD -100
+effect_percent MOD_RESOURCE TRIBUTE_INEFFICIENCY ATTR_SET 50
+<LAND_GENERATION>
+base_terrain DLC_MANGROVESHALLOW
+enable_waves 0
+create_land {
+terrain_type RAINFOREST_GRASS
+land_position 15 rnd(43,47)
+base_size 18
+other_zone_avoidance_distance 4
+zone 1
+if FLIP
+assign_to AT_TEAM 2 0 0
+else
+assign_to AT_TEAM 1 0 0
+endif
+}
+create_land {
+terrain_type RAINFOREST_GRASS
+land_position rnd(43,47) 15
+base_size 18
+other_zone_avoidance_distance 4
+zone 1
+if FLIP
+assign_to AT_TEAM 1 0 0
+else
+assign_to AT_TEAM 2 0 0
+endif
+}
+create_land {
+terrain_type RAINFOREST_GRASS
+land_position rnd(53,57) 80
+base_size 18
+other_zone_avoidance_distance 4
+zone 2
+if FLIP
+assign_to AT_TEAM 2 0 0
+else
+assign_to AT_TEAM 1 0 0
+endif
+}
+create_land {
+terrain_type RAINFOREST_GRASS
+border_fuzziness 100
+land_position 80 rnd(53,57)
+base_size 18
+other_zone_avoidance_distance 4
+zone 2
+if FLIP
+assign_to AT_TEAM 1 0 0
+else
+assign_to AT_TEAM 2 0 0
+endif
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 0 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 1 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 1 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 2 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 2 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 3 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 3 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 4 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 4 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 5 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 5 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 6 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 6 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 7 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 7 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 8 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 8 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 9 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 9 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 10 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 10 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 11 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 11 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 12 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 12 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 13 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 13 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 14 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 14 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 15 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 15 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 16 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 16 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 17 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 17 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 18 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 18 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 19 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 19 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 20 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 20 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 21 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 21 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 22 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 22 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 23 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 23 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 24 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 24 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 25 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 25 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 26 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 26 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 27 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 27 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 28 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 28 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 29 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 29 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 30 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 30 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 31 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 31 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 32 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 32 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 33 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 33 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 34 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 34 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 35 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 35 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 36 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 36 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 37 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 37 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 38 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 38 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 39 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 39 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 40 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 40 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 41 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 41 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 42 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 42 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 43 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 43 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 44 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 44 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 45 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 45 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 46 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 46 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 47 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 47 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 48 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 48 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 49 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 49 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 50 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 50 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 51 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 51 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 52 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 52 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 53 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 53 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 54 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 54 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 55 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 55 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 56 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 56 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 57 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 57 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 58 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 58 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 59 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 59 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 60 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 60 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 61 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 61 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 62 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 62 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 63 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 63 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 64 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 64 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 65 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 65 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 66 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 66 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 67 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 67 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 68 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 68 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 69 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 69 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 70 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 70 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 71 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 71 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 72 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 72 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 73 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 73 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 74 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 74 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 75 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 75 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 76 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 76 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 77 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 77 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 78 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 78 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 79 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 79 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 80 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 80 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 81 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 81 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 82 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 82 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 83 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 83 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 84 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 84 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 85 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 85 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 86 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 86 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 87 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 87 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 88 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 88 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 89 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 89 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 90 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 90 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 91 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 91 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 92 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 92 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 93 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 93 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 94 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 94 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 95 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 95 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 96 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 96 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 97 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 97 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 98 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 98 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 99 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 99 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 100 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 0
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 1
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 1
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 2
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 2
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 3
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 3
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 4
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 4
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 5
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 5
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 6
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 6
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 7
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 7
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 8
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 8
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 9
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 9
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 10
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 10
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 11
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 11
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 12
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 12
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 13
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 13
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 14
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 14
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 15
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 15
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 16
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 16
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 17
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 17
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 18
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 18
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 19
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 19
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 20
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 20
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 21
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 21
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 22
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 22
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 23
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 23
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 24
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 24
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 25
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 25
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 26
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 26
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 27
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 27
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 28
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 28
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 29
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 29
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 30
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 30
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 31
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 31
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 32
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 32
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 33
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 33
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 34
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 34
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 35
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 35
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 36
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 36
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 37
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 37
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 38
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 38
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 39
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 39
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 40
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 40
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 41
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 41
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 42
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 42
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 43
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 43
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 44
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 44
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 45
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 45
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 46
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 46
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 47
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 47
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 48
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 48
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 49
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 49
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 50
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 50
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 51
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 51
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 52
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 52
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 53
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 53
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 54
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 54
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 55
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 55
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 56
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 56
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 57
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 57
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 58
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 58
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 59
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 59
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 60
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 60
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 61
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 61
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 62
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 62
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 63
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 63
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 64
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 64
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 65
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 65
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 66
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 66
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 67
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 67
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 68
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 68
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 69
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 69
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 70
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 70
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 71
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 71
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 72
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 72
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 73
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 73
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 74
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 74
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 75
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 75
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 76
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 76
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 77
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 77
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 78
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 78
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 79
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 79
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 80
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 80
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 81
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 81
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 82
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 82
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 83
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 83
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 84
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 84
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 85
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 85
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 86
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 86
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 87
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 87
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 88
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 88
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 89
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 89
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 90
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 90
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 91
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 91
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 92
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 92
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 93
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 93
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 94
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 94
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 95
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 95
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 96
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 96
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 97
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 97
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 98
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 98
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 99
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 99
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 1
+land_position 0 100
+}
+create_land {
+terrain_type DLC_MANGROVESHALLOW
+number_of_tiles 0
+base_size 2
+land_position 100 100
+}
+<ELEVATION_GENERATION>
+create_elevation 4 {
+enable_balanced_elevation
+base_terrain RAINFOREST_GRASS
+number_of_tiles 2000
+number_of_clumps 20
+}
+create_elevation 3 {
+enable_balanced_elevation
+base_terrain RAINFOREST_GRASS
+number_of_tiles 500
+number_of_clumps 5
+}
+<TERRAIN_GENERATION>
+create_terrain DLC_ROCK {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+spacing_to_other_terrain_types 5
+}
+create_terrain DLC_ROCK {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+spacing_to_other_terrain_types 5
+}
+create_terrain DLC_ROCK {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+spacing_to_other_terrain_types 5
+}
+create_terrain DLC_ROCK {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+spacing_to_other_terrain_types 5
+}
+create_terrain RAINFOREST_GRASS {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+terrain_mask 2
+spacing_to_other_terrain_types 5
+}
+create_terrain RAINFOREST_GRASS {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+terrain_mask 2
+spacing_to_other_terrain_types 5
+}
+create_terrain RAINFOREST_GRASS {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+terrain_mask 2
+spacing_to_other_terrain_types 5
+}
+create_terrain RAINFOREST_GRASS {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+terrain_mask 2
+spacing_to_other_terrain_types 5
+}
+create_terrain ROAD {
+base_layer DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain ROAD {
+base_layer DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain ROAD {
+base_layer DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain ROAD {
+base_layer DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain RAINFOREST_GRASS {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain RAINFOREST_GRASS {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain RAINFOREST_GRASS {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain RAINFOREST_GRASS {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain DLC_MANGROVESHALLOW {
+base_terrain ROAD
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain DLC_MANGROVESHALLOW {
+base_terrain ROAD
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain DLC_MANGROVESHALLOW {
+base_terrain ROAD
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain DLC_MANGROVESHALLOW {
+base_terrain ROAD
+land_percent 100
+number_of_clumps 4096
+}
+create_terrain DLC_RAINFOREST {
+base_terrain RAINFOREST_GRASS
+spacing_to_other_terrain_types 5
+land_percent 10
+number_of_clumps 24
+set_avoid_player_start_areas
+}
+create_terrain DLC_JUNGLELEAVES {
+base_terrain RAINFOREST_GRASS
+land_percent 9
+number_of_clumps 24
+spacing_to_other_terrain_types 1
+terrain_mask 1
+}
+create_terrain GRASS2 {
+base_terrain RAINFOREST_GRASS
+land_percent 7
+number_of_clumps 32
+spacing_to_other_terrain_types 1
+terrain_mask 1
+}
+create_terrain DIRT3 {
+base_terrain RAINFOREST_GRASS
+land_percent 35
+number_of_clumps 64
+spacing_to_other_terrain_types 1
+terrain_mask 1
+height_limits 1 5
+}
+create_terrain DLC_NEWSHALLOW {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 1
+number_of_clumps 32
+terrain_mask 1
+}
+create_terrain DLC_WATER5 {
+base_terrain DLC_MANGROVESHALLOW
+number_of_tiles 64
+number_of_clumps 32
+terrain_mask 1
+}
+<CONNECTION_GENERATION>
+create_connect_all_players_land {
+replace_terrain BEACH DLC_BEACH2
+terrain_size BEACH 999 0
+}
+<OBJECTS_GENERATION>
+create_actor_area 20 20 20000 15
+create_actor_area 147 147 20001 15
+create_actor_area 83 83 20002 81
+create_actor_area 84 83 20002 81
+create_actor_area 83 84 20002 81
+create_actor_area 84 84 20002 81
+create_object GOLD {
+number_of_objects 3
+number_of_groups 2
+set_tight_grouping
+set_gaia_object_only
+group_placement_radius 2
+min_distance_to_players 45
+set_circular_placement
+avoid_forest_zone 3
+temp_min_distance_group_placement 9
+min_distance_group_placement 4
+actor_area_to_place_in 20000
+actor_area 20003
+actor_area_radius 9
+}
+create_object GOLD {
+number_of_objects 3
+number_of_groups 2
+set_tight_grouping
+set_gaia_object_only
+group_placement_radius 2
+min_distance_to_players 45
+set_circular_placement
+avoid_forest_zone 3
+temp_min_distance_group_placement 9
+min_distance_group_placement 4
+actor_area_to_place_in 20001
+actor_area 20003
+actor_area_radius 9
+}
+create_object TOWN_CENTER {
+set_place_for_every_player
+max_distance_to_players 0
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+max_distance_to_players 0
+actor_area 20004
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 2
+set_place_for_every_player
+set_gaia_object_only
+find_closest
+min_distance_to_players 1
+max_distance_to_players 1
+actor_area 20005
+actor_area_radius 0
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+find_closest
+min_distance_to_players 1
+max_distance_to_players 1
+avoid_actor_area 20005
+actor_area 20006
+actor_area_radius 0
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+find_closest
+min_distance_to_players 1
+max_distance_to_players 1
+avoid_actor_area 20005
+avoid_actor_area 20006
+actor_area 20007
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 2
+set_place_for_every_player
+set_gaia_object_only
+find_closest
+min_distance_to_players 1
+max_distance_to_players 1
+actor_area 20008
+actor_area_radius 1
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+max_distance_to_players 1
+avoid_actor_area 20008
+actor_area 20009
+actor_area_radius 0
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20009
+actor_area 20010
+actor_area_radius 0
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20007
+actor_area 20010
+actor_area_radius 0
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20006
+actor_area 20010
+actor_area_radius 0
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20004
+actor_area 20010
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20011
+actor_area_radius 1
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20012
+actor_area_radius 2
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20013
+actor_area_radius 3
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20014
+actor_area_radius 4
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20015
+actor_area_radius 5
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20016
+actor_area_radius 6
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20017
+actor_area_radius 7
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20018
+actor_area_radius 8
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20019
+actor_area_radius 9
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20020
+actor_area_radius 10
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20021
+actor_area_radius 11
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20022
+actor_area_radius 12
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20023
+actor_area_radius 13
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20024
+actor_area_radius 14
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20025
+actor_area_radius 15
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20026
+actor_area_radius 16
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20027
+actor_area_radius 17
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20028
+actor_area_radius 18
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20029
+actor_area_radius 19
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20030
+actor_area_radius 20
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20031
+actor_area_radius 21
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20032
+actor_area_radius 22
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20033
+actor_area_radius 23
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20034
+actor_area_radius 24
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20035
+actor_area_radius 25
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20036
+actor_area_radius 26
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20037
+actor_area_radius 27
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20038
+actor_area_radius 28
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20039
+actor_area_radius 29
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20040
+actor_area_radius 30
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20041
+actor_area_radius 31
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20042
+actor_area_radius 32
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20043
+actor_area_radius 33
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20044
+actor_area_radius 34
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20045
+actor_area_radius 35
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20046
+actor_area_radius 36
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20047
+actor_area_radius 37
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20048
+actor_area_radius 38
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20049
+actor_area_radius 39
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20050
+actor_area_radius 40
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20051
+actor_area_radius 41
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20052
+actor_area_radius 42
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20053
+actor_area_radius 43
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20054
+actor_area_radius 44
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20055
+actor_area_radius 45
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20056
+actor_area_radius 46
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20057
+actor_area_radius 47
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20058
+actor_area_radius 48
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20059
+actor_area_radius 49
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20060
+actor_area_radius 50
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20061
+actor_area_radius 51
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20062
+actor_area_radius 52
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20063
+actor_area_radius 53
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20064
+actor_area_radius 54
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20065
+actor_area_radius 55
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20066
+actor_area_radius 56
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20067
+actor_area_radius 57
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20068
+actor_area_radius 58
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20069
+actor_area_radius 59
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20070
+actor_area_radius 60
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20071
+actor_area_radius 61
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20072
+actor_area_radius 62
+}
+create_object PHON {
+number_of_objects 4
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20010
+actor_area 20073
+actor_area_radius 63
+}
+create_object TEMPORARY_REVEALER {
+number_of_objects 4
+actor_area_to_place_in 20010
+set_place_for_every_player
+max_distance_to_players 2
+}
+ create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+number_of_objects 5
+min_distance_to_players 1
+max_distance_to_players 1
+find_closest
+actor_area 20074
+actor_area_radius 0
+}
+create_object PHOFF {
+set_place_for_every_player
+set_gaia_object_only
+min_distance_to_players 1
+max_distance_to_players 1
+find_closest
+second_object HERDABLE_A
+actor_area 20075
+actor_area_radius 0
+avoid_actor_area 20074
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20075
+actor_area 20076
+actor_area_radius 1
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+max_distance_to_players 0
+actor_area 20077
+actor_area_radius 1
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+number_of_objects 5
+max_distance_to_players 2
+temp_min_distance_group_placement 1
+find_closest
+avoid_actor_area 20077
+actor_area 20078
+actor_area_radius 1
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+max_distance_to_players 2
+find_closest
+avoid_actor_area 20077
+avoid_actor_area 20078
+actor_area 20079
+actor_area_radius 0
+}
+create_object PHOFF {
+set_place_for_every_player
+actor_area_to_place_in 20076
+avoid_actor_area 20004
+avoid_actor_area 20080
+avoid_actor_area 20075
+avoid_actor_area 20079
+actor_area 20080
+actor_area_radius 0
+second_object SHEP0
+}
+create_object PHOFF {
+set_place_for_every_player
+actor_area_to_place_in 20076
+avoid_actor_area 20004
+avoid_actor_area 20080
+avoid_actor_area 20075
+avoid_actor_area 20079
+actor_area 20080
+actor_area_radius 0
+second_object SHEP1
+}
+create_object PHOFF {
+set_place_for_every_player
+actor_area_to_place_in 20076
+avoid_actor_area 20004
+avoid_actor_area 20080
+avoid_actor_area 20075
+avoid_actor_area 20079
+actor_area 20080
+actor_area_radius 0
+second_object SHEP2
+}
+create_object PHOFF {
+set_place_for_every_player
+actor_area_to_place_in 20076
+avoid_actor_area 20004
+avoid_actor_area 20080
+avoid_actor_area 20075
+avoid_actor_area 20079
+actor_area 20080
+actor_area_radius 0
+second_object SHEP3
+}
+create_object PHOFF {
+set_place_for_every_player
+actor_area_to_place_in 20076
+avoid_actor_area 20004
+avoid_actor_area 20080
+avoid_actor_area 20075
+avoid_actor_area 20079
+actor_area 20080
+actor_area_radius 0
+second_object SHEP4
+}
+create_object PHOFF {
+set_place_for_every_player
+actor_area_to_place_in 20076
+avoid_actor_area 20004
+avoid_actor_area 20080
+avoid_actor_area 20075
+avoid_actor_area 20079
+actor_area 20080
+actor_area_radius 0
+second_object SHEP5
+}
+create_object PHON {
+number_of_objects 2
+set_gaia_object_only
+set_place_for_every_player
+find_closest
+min_distance_to_players 5
+max_distance_to_players 5
+actor_area 20081
+actor_area_radius 5
+}
+create_object PHON {
+number_of_objects 99
+set_gaia_object_only
+set_place_for_every_player
+actor_area_to_place_in 20015
+avoid_actor_area 20081
+avoid_actor_area 20014
+actor_area 20082
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 2
+set_gaia_object_only
+set_place_for_every_player
+find_closest
+min_distance_to_players 5
+max_distance_to_players 5
+actor_area 20083
+actor_area_radius 6
+}
+create_object PHON {
+number_of_objects 99
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20083
+avoid_actor_area 20015
+max_distance_to_players 7
+actor_area 20082
+actor_area_radius 0
+}
+create_object HOUSE {
+number_of_objects 2
+temp_min_distance_group_placement 7
+set_place_for_every_player
+avoid_forest_zone 2
+actor_area_to_place_in 20082
+actor_area 20084
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 2
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20084
+actor_area 20085
+actor_area_radius 1
+}
+create_object PHON {
+number_of_objects 18
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20085
+actor_area 20086
+actor_area_radius 0
+}
+create_object TERRAIN_BLOCKER {
+number_of_objects 10
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20086
+actor_area 20087
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20086
+avoid_actor_area 20087
+actor_area 20088
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20089
+actor_area_radius 1
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20090
+actor_area_radius 2
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20091
+actor_area_radius 3
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20092
+actor_area_radius 4
+}
+create_object TERRAIN_BLOCKER {
+number_of_objects 14
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20089
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20090
+actor_area_radius 2
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20091
+actor_area_radius 3
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20092
+actor_area_radius 4
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20093
+actor_area_radius 5
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20094
+actor_area_radius 6
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20095
+actor_area_radius 7
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20096
+actor_area_radius 8
+}
+create_object PHON {
+number_of_objects 8
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20088
+actor_area 20097
+actor_area_radius 9
+}
+create_object STRAGGLER {
+set_place_for_every_player
+set_gaia_object_only
+avoid_forest_zone 2
+actor_area_to_place_in 20015
+avoid_actor_area 20014
+avoid_actor_area 20090
+actor_area 20098
+actor_area_radius 0
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20098
+actor_area 20099
+actor_area_radius 1
+}
+create_object PHON {
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20098
+actor_area 20100
+actor_area_radius 2
+}
+create_object STRAGGLER {
+number_of_objects 2
+set_place_for_every_player
+set_gaia_object_only
+temp_min_distance_group_placement 2
+avoid_forest_zone 2
+actor_area_to_place_in 20014
+avoid_actor_area 20013
+avoid_actor_area 20089
+avoid_actor_area 20100
+actor_area 20100
+actor_area_radius 2
+}
+create_object STRAGGLER {
+number_of_objects 2
+set_place_for_every_player
+set_gaia_object_only
+temp_min_distance_group_placement 3
+avoid_forest_zone 2
+actor_area_to_place_in 20015
+avoid_actor_area 20014
+avoid_actor_area 20089
+avoid_actor_area 20100
+actor_area 20100
+actor_area_radius 2
+}
+create_object LUMBERJACK0 {
+set_place_for_every_player
+actor_area_to_place_in 20099
+actor_area 20080
+actor_area_radius 0
+}
+create_object LUMBERJACK1 {
+set_place_for_every_player
+actor_area_to_place_in 20099
+actor_area 20080
+actor_area_radius 0
+}
+create_object LUMBERJACK2 {
+set_place_for_every_player
+actor_area_to_place_in 20099
+actor_area 20080
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 9
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20080
+actor_area 20101
+actor_area_radius 1
+}
+create_object PHON {
+number_of_objects 9
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20080
+actor_area 20102
+actor_area_radius 2
+}
+create_object PHON {
+number_of_objects 9
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20080
+actor_area 20103
+actor_area_radius 3
+}
+create_object PHON {
+number_of_objects 9
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20080
+actor_area 20104
+actor_area_radius 4
+}
+create_object PHON {
+number_of_objects 9
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20080
+actor_area 20105
+actor_area_radius 5
+}
+create_object PHON {
+number_of_objects 9
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20080
+actor_area 20106
+actor_area_radius 6
+}
+create_object PHON {
+number_of_objects 9
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20080
+actor_area 20107
+actor_area_radius 7
+}
+create_object PHON {
+number_of_objects 9
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20080
+actor_area 20108
+actor_area_radius 8
+}
+create_object PHON {
+number_of_objects 9
+set_place_for_every_player
+set_gaia_object_only
+actor_area_to_place_in 20080
+actor_area 20109
+actor_area_radius 9
+}
+create_object SCOUT {
+set_place_for_every_player
+min_distance_to_players 7
+max_distance_to_players 9
+set_circular_placement
+}
+create_object FORAGE {
+number_of_objects 6
+set_tight_grouping
+set_place_for_every_player
+set_gaia_object_only
+avoid_actor_area 20018
+max_distance_to_players 12
+set_circular_placement
+max_distance_to_other_zones 7
+avoid_forest_zone 3
+avoid_actor_area 20091
+avoid_actor_area 20100
+avoid_actor_area 20110
+avoid_actor_area 20003
+actor_area 20110
+actor_area_radius 6
+}
+create_object GOLD {
+number_of_objects 7
+set_tight_grouping
+set_place_for_every_player
+set_gaia_object_only
+avoid_actor_area 20020
+max_distance_to_players 16
+set_circular_placement
+max_distance_to_other_zones 7
+avoid_forest_zone 3
+avoid_cliff_zone 3
+avoid_actor_area 20091
+avoid_actor_area 20100
+avoid_actor_area 20110
+avoid_actor_area 20111
+avoid_actor_area 20003
+actor_area 20111
+actor_area_radius 7
+}
+create_object STONE {
+number_of_objects 5
+group_placement_radius 2
+set_tight_grouping
+set_gaia_object_only
+set_place_for_every_player
+avoid_actor_area 20022
+max_distance_to_players 18
+set_circular_placement
+avoid_forest_zone 3
+avoid_cliff_zone 3
+max_distance_to_other_zones 7
+min_distance_group_placement 7
+avoid_actor_area 20091
+avoid_actor_area 20100
+avoid_actor_area 20110
+avoid_actor_area 20111
+avoid_actor_area 20112
+avoid_actor_area 20003
+actor_area 20112
+actor_area_radius 7
+}
+create_object GOLD {
+number_of_objects 4
+set_tight_grouping
+set_gaia_object_only
+set_place_for_every_player
+avoid_actor_area 20026
+max_distance_to_players 26
+set_circular_placement
+max_distance_to_other_zones 7
+avoid_forest_zone 2
+avoid_cliff_zone 2
+avoid_actor_area 20091
+avoid_actor_area 20100
+avoid_actor_area 20110
+avoid_actor_area 20111
+avoid_actor_area 20112
+avoid_actor_area 20113
+avoid_actor_area 20003
+actor_area 20113
+actor_area_radius 7
+}
+create_object GOLD {
+number_of_objects 4
+set_tight_grouping
+set_gaia_object_only
+set_place_for_every_player
+set_circular_placement
+avoid_actor_area 20033
+max_distance_to_players 30
+max_distance_to_other_zones 7
+avoid_forest_zone 2
+avoid_cliff_zone 2
+avoid_actor_area 20091
+avoid_actor_area 20100
+avoid_actor_area 20110
+avoid_actor_area 20111
+avoid_actor_area 20112
+avoid_actor_area 20113
+avoid_actor_area 20114
+avoid_actor_area 20003
+actor_area 20114
+actor_area_radius 7
+}
+create_object DEER {
+number_of_objects 3
+set_place_for_every_player
+set_gaia_object_only
+set_circular_placement
+set_loose_grouping
+avoid_actor_area 20026
+max_distance_to_players 22
+avoid_forest_zone 2
+avoid_actor_area 20110
+max_distance_to_other_zones 6
+min_distance_to_map_edge 10
+}
+create_object BOAR {
+number_of_objects 2
+set_place_for_every_player
+temp_min_distance_group_placement 3
+set_gaia_object_only
+set_circular_placement
+avoid_actor_area 20024
+max_distance_to_players 22
+avoid_forest_zone 2
+min_distance_to_map_edge 5
+}
+create_object HERDABLE_A {
+number_of_objects 3
+set_place_for_every_player
+set_circular_placement
+set_loose_grouping
+min_distance_to_players 7
+max_distance_to_players 9
+}
+create_object PHON {
+number_of_objects 9999
+terrain_to_place_on DLC_BEACH2
+set_gaia_object_only
+actor_area 20115
+actor_area_radius 1
+}
+create_object PHON {
+number_of_objects 9999
+terrain_to_place_on DLC_BEACH2
+set_gaia_object_only
+actor_area 20116
+actor_area_radius 4
+}
+create_object PHON {
+set_gaia_object_only
+number_of_objects 999
+temp_min_distance_group_placement 3
+terrain_to_place_on DLC_MANGROVESHALLOW
+second_object SHORE_FISH
+actor_area 20117
+actor_area_radius 0
+}
+create_object RELIC {
+number_of_objects 5
+set_gaia_object_only
+terrain_to_place_on DLC_MANGROVESHALLOW
+avoid_actor_area 20115
+temp_min_distance_group_placement 25
+min_distance_to_map_edge 2
+min_distance_group_placement 1
+}
+create_object STONE {
+number_of_objects 2
+number_of_groups 100
+set_tight_grouping
+temp_min_distance_group_placement 20
+min_distance_to_map_edge 4
+avoid_forest_zone 2
+min_distance_group_placement 3
+set_gaia_object_only
+min_distance_to_players 30
+set_circular_placement
+terrain_to_place_on RAINFOREST_GRASS
+avoid_actor_area 20115
+actor_area_to_place_in 20116
+actor_area 20118
+actor_area_radius 1
+}
+create_object PHON {
+set_gaia_object_only
+number_of_objects 999
+actor_area_to_place_in 20117
+actor_area 20119
+actor_area_radius 2
+}
+create_object PHON {
+set_gaia_object_only
+number_of_objects 9999
+actor_area_to_place_in 20118
+actor_area 20119
+actor_area_radius 2
+}
+create_object REED {
+set_gaia_object_only
+number_of_objects 3
+number_of_groups 100
+temp_min_distance_group_placement 11
+group_placement_radius 2
+set_tight_grouping
+actor_area_to_place_in 20116
+avoid_actor_area 20119
+terrain_to_place_on RAINFOREST_GRASS
+}
+create_object REED {
+set_gaia_object_only
+number_of_objects 2
+number_of_groups 100
+temp_min_distance_group_placement 13
+group_placement_radius 2
+set_tight_grouping
+actor_area_to_place_in 20116
+avoid_actor_area 20119
+terrain_to_place_on RAINFOREST_GRASS
+}
+create_object SHEEP {
+number_of_objects 100
+set_gaia_object_only
+avoid_actor_area 20002
+temp_min_distance_group_placement 28
+min_distance_group_placement 1
+min_distance_to_players 35
+set_circular_placement
+}
+create_object DEER {
+number_of_objects rnd(30,40)
+temp_min_distance_group_placement 12
+min_distance_group_placement 3
+set_gaia_object_only
+avoid_forest_zone 1
+min_distance_to_map_edge 3
+min_distance_to_players 27
+set_circular_placement
+max_distance_to_other_zones 14
+min_distance_to_map_edge 3
+}
+create_object STRAGGLER {
+number_of_objects 100
+temp_min_distance_group_placement 15
+min_distance_to_map_edge 1
+set_gaia_object_only
+terrain_to_place_on RAINFOREST_GRASS
+min_distance_group_placement 1
+avoid_forest_zone 2
+max_distance_to_other_zones 5
+min_distance_to_map_edge 4
+avoid_actor_area 20119
+avoid_actor_area 20116
+min_distance_to_players 18
+set_circular_placement
+avoid_actor_area 20110
+avoid_actor_area 20111
+avoid_actor_area 20112
+avoid_actor_area 20113
+avoid_actor_area 20114
+}
+create_object DLC_ROCKJUNGLE {
+number_of_objects 10
+avoid_forest_zone 3
+min_distance_group_placement 3
+terrain_to_place_on RAINFOREST_GRASS
+temp_min_distance_group_placement 25
+min_distance_group_placement 5
+set_gaia_object_only
+min_distance_to_map_edge 3
+avoid_forest_zone 2
+avoid_actor_area 20119
+avoid_actor_area 20116
+min_distance_to_players 18
+set_circular_placement
+avoid_actor_area 20111
+avoid_actor_area 20112
+avoid_actor_area 20113
+avoid_actor_area 20114
+}

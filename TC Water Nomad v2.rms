@@ -1,0 +1,320 @@
+/*
+ * Water Nomad for The Cartographers.
+ * Edited by T-West, October 2023.
+ *
+ * Based on DE's standard version of Water Nomad.
+ */
+
+/* Water Nomad 2021 */
+#const PHOFF 649
+#const PHON 1291
+#const TERRAIN_BLOCKER 1613
+#const TEMPORARY_REVEALER 651
+#const TRIBUTE_INEFFICIENCY 46
+start_random
+percent_chance 50 #const SHEP0 590
+percent_chance 50 #const SHEP0 592
+end_random
+start_random
+percent_chance 50 #const SHEP1 590
+percent_chance 50 #const SHEP1 592
+end_random
+start_random
+percent_chance 50 #const SHEP2 590
+percent_chance 50 #const SHEP2 592
+end_random
+start_random
+percent_chance 50 #const SHEP3 590
+percent_chance 50 #const SHEP3 592
+end_random
+start_random
+percent_chance 50 #const SHEP4 590
+percent_chance 50 #const SHEP4 592
+end_random
+start_random
+percent_chance 50 #const SHEP5 590
+percent_chance 50 #const SHEP5 592
+end_random
+start_random
+percent_chance 50 #const LUMBERJACK0 123
+percent_chance 50 #const LUMBERJACK0 218
+end_random
+start_random
+percent_chance 50 #const LUMBERJACK1 123
+percent_chance 50 #const LUMBERJACK1 218
+end_random
+start_random
+percent_chance 50 #const LUMBERJACK2 123
+percent_chance 50 #const LUMBERJACK2 218
+end_random
+<PLAYER_SETUP>
+random_placement
+nomad_resources
+ai_info_map_type MIGRATION 1 0 0
+effect_amount MOD_RESOURCE AMOUNT_STARTING_WOOD ATTR_ADD 50
+effect_percent MOD_RESOURCE TRIBUTE_INEFFICIENCY ATTR_SET 50
+effect_amount SET_ATTRIBUTE PHOFF ATTR_DEAD_ID -1
+effect_amount SET_ATTRIBUTE PHOFF ATTR_TERRAIN_ID 0
+effect_amount SET_ATTRIBUTE PHOFF ATTR_LINE_OF_SIGHT 0
+effect_amount SET_ATTRIBUTE PHOFF ATTR_HITPOINTS 0
+effect_amount SET_ATTRIBUTE PHOFF ATTR_STORAGE_VALUE 0
+effect_amount SET_ATTRIBUTE PHON ATTR_DEAD_ID -1
+effect_amount SET_ATTRIBUTE PHON ATTR_TERRAIN_ID 0
+effect_amount SET_ATTRIBUTE PHON ATTR_LINE_OF_SIGHT 0
+effect_amount SET_ATTRIBUTE PHON ATTR_HITPOINTS 0
+effect_amount SET_ATTRIBUTE PHON ATTR_STORAGE_VALUE 0
+<LAND_GENERATION>
+base_terrain DLC_MANGROVESHALLOW
+enable_waves 0
+create_player_lands {
+terrain_type DLC_MANGROVESHALLOW
+land_percent 6
+base_size 10
+if BATTLE_ROYALE
+circle_radius 38
+border_fuzziness 1
+else
+border_fuzziness 15
+endif
+clumping_factor 15
+other_zone_avoidance_distance 3
+set_zone_by_team
+}
+<TERRAIN_GENERATION>
+color_correction CC_JUNGLE
+create_terrain DLC_BEACH2 {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 21
+number_of_clumps 100
+spacing_to_other_terrain_types 0
+}
+create_terrain DLC_MANGROVEFOREST {
+base_terrain DLC_MANGROVESHALLOW
+land_percent 12
+number_of_clumps 30
+spacing_to_other_terrain_types 0
+}
+create_terrain DLC_NEWSHALLOW {
+base_terrain DLC_BEACH2
+land_percent 2
+number_of_clumps 160
+spacing_to_other_terrain_types 0
+}
+create_terrain DLC_WATER5 {
+base_terrain DLC_BEACH2
+land_percent 100
+number_of_clumps 100
+spacing_to_other_terrain_types 1
+}
+create_terrain DLC_WATER5 {
+base_terrain DLC_BEACH2
+land_percent 100
+number_of_clumps 100
+spacing_to_other_terrain_types 1
+}
+create_terrain DLC_WATER5 {
+base_terrain DLC_BEACH2
+land_percent 100
+number_of_clumps 100
+spacing_to_other_terrain_types 1
+}
+create_terrain DLC_WATER5 {
+base_terrain DLC_BEACH2
+land_percent 100
+number_of_clumps 100
+spacing_to_other_terrain_types 1
+}
+create_terrain DLC_WATER5 {
+base_terrain DLC_BEACH2
+land_percent 100
+number_of_clumps 100
+spacing_to_other_terrain_types 1
+}
+create_terrain DLC_WATER5 {
+base_terrain DLC_BEACH2
+land_percent 100
+number_of_clumps 100
+spacing_to_other_terrain_types 1
+}
+create_terrain DLC_WATER5 {
+base_terrain DLC_BEACH2
+land_percent 100
+number_of_clumps 100
+spacing_to_other_terrain_types 1
+}
+create_terrain DLC_WATER5 {
+base_terrain DLC_BEACH2
+land_percent 100
+number_of_clumps 100
+spacing_to_other_terrain_types 1
+}
+<OBJECTS_GENERATION>
+create_object DORADO {
+number_of_objects 999
+set_scaling_to_map_size
+temp_min_distance_group_placement 12
+set_gaia_object_only
+actor_area 20000
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 999
+set_scaling_to_map_size
+set_gaia_object_only
+actor_area_to_place_in 20000
+actor_area 20001
+actor_area_radius 3
+}
+create_object TUNA {
+number_of_objects 999
+set_scaling_to_map_size
+temp_min_distance_group_placement 9
+set_gaia_object_only
+avoid_actor_area 20001
+actor_area 20002
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 999
+set_scaling_to_map_size
+set_gaia_object_only
+actor_area_to_place_in 20002
+actor_area 20003
+actor_area_radius 3
+}
+create_object SALMON {
+number_of_objects 999
+set_scaling_to_map_size
+set_gaia_object_only
+temp_min_distance_group_placement 8
+avoid_actor_area 20001
+avoid_actor_area 20003
+actor_area 20004
+actor_area_radius 0
+}
+create_object PHON {
+number_of_objects 999
+set_scaling_to_map_size
+set_gaia_object_only
+actor_area_to_place_in 20004
+actor_area 20005
+actor_area_radius 3
+}
+create_object PHOFF {
+number_of_objects 28224
+set_gaia_object_only
+avoid_actor_area 20000
+avoid_actor_area 20002
+avoid_actor_area 20004
+actor_area 20006
+actor_area_radius 0
+}
+create_object FISHING_SHIP {
+number_of_objects 3
+number_of_groups 2
+set_tight_grouping
+min_distance_to_map_edge 10
+temp_min_distance_group_placement 10
+max_distance_to_players 70
+min_distance_group_placement 2
+set_place_for_every_player
+avoid_actor_area 20006
+actor_area 20007
+actor_area_radius 10
+avoid_actor_area 20007
+}
+create_object VILLAGER {
+number_of_objects 3
+number_of_groups 3
+set_loose_grouping
+set_place_for_every_player
+temp_min_distance_group_placement 15
+max_distance_to_players 70
+min_distance_to_map_edge 10
+min_distance_group_placement 2
+actor_area 20008
+actor_area_radius 10
+avoid_actor_area 20008
+avoid_actor_area 20007
+}
+create_object DLC_BOXTURTLE {
+number_of_objects 999
+set_scaling_to_map_size
+temp_min_distance_group_placement 15
+min_distance_group_placement 1
+set_gaia_object_only
+avoid_actor_area 20001
+avoid_actor_area 20003
+avoid_actor_area 20005
+}
+create_object GOLD {
+number_of_groups 250
+number_of_objects 4
+group_placement_radius 2
+set_tight_grouping
+set_gaia_object_only
+avoid_forest_zone 1
+temp_min_distance_group_placement 18
+min_distance_group_placement 1
+min_distance_to_map_edge 1
+max_distance_to_other_zones 0
+terrain_to_place_on DLC_MANGROVESHALLOW
+actor_area 20009
+actor_area_radius 4
+}
+create_object STONE {
+number_of_groups 250
+number_of_objects 3
+group_placement_radius 2
+set_tight_grouping
+set_gaia_object_only
+avoid_forest_zone 1
+min_distance_group_placement 1
+min_distance_to_map_edge 1
+temp_min_distance_group_placement 24
+max_distance_to_other_zones 0
+terrain_to_place_on DLC_MANGROVESHALLOW
+avoid_actor_area 20009
+actor_area 20010
+actor_area_radius 4
+}
+create_object RELIC {
+number_of_objects 5
+min_distance_group_placement 2
+min_distance_to_map_edge 5
+avoid_forest_zone 2
+min_distance_to_players 15
+temp_min_distance_group_placement 40
+}
+create_object DLC_WATERBUFFALO {
+number_of_groups 250
+number_of_objects 2
+group_placement_radius 2
+set_loose_grouping
+set_gaia_object_only
+temp_min_distance_group_placement 16
+avoid_forest_zone 1
+min_distance_group_placement 1
+}
+create_object MACAW {
+number_of_objects 4
+set_scaling_to_map_size
+}
+create_object DLC_MANGROVE_TREE {
+number_of_objects 26
+set_gaia_object_only
+set_scaling_to_map_size
+min_distance_group_placement 2
+min_distance_to_players 12
+avoid_actor_area 20009
+avoid_actor_area 20010
+avoid_forest_zone 2
+}
+create_object DLC_ROCKBEACH {
+number_of_objects 99
+set_scaling_to_map_size
+temp_min_distance_group_placement 90
+min_distance_group_placement 2
+set_gaia_object_only
+min_distance_to_players 25
+}
