@@ -101,7 +101,8 @@ This version is a complete rewrite of the map intended for 2v2s.
 ### Monocle
 
 A map original by Chrazini, released in 2020 and used in various tournaments beginning with the [TeTe Invitational](https://www.ageofempires.com/mods/details/4136/).
-Players start in a forested valley surrounded by a ring of Shore Fish.
+Players start in a forested valley surrounded by an elevated ring of Shore Fish.
+This tournament's version includes connections to ensure there are paths between players in the middle and ensures Relics spawn in a more consistent pattern.
 
 ### Nomad
 
