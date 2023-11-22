@@ -36,7 +36,7 @@ It's not always easy to track down the original of certain maps, but here I'll a
 ### Arabia
 
 The most standard Aoe2 map there is, the original version by Ensemble Studios was the bread and butter of AoC.
-The particular version from this tournament is based on the version in Aoe2 DE from October 2023, authored by Chrazini.
+The particular version for this tournament is based on the version in Aoe2 DE from October 2023, authored by Chrazini.
 
 ### Arena
 
