@@ -28,6 +28,8 @@ The maps in the repository include:
 - ZeSnake
 - ZeWall
 
+If you wish to build these maps yourself (and are up for a bit of Rust programming), the preprocessor I use to generate the output files is here: [https://github.com/twestura/Draft-RMS-Preprocessor](https://github.com/twestura/Draft-RMS-Preprocessor).
+
 ## Map History
 
 A variety of authors have contributed to Aoe2's map scripting scene over the years.
