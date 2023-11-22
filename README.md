@@ -41,10 +41,10 @@ The particular version for this tournament is based on the version in Aoe2 DE fr
 ### Arena
 
 The best circus in town.
-The map was originally included by Ensemble Studios in the Conquerors Expansion.
+The map was originally included by Ensemble Studios in *The Conquerors* expansion.
 
 This particular script is rewritten mostly from scratch.
-The technique of generating forest lands in a circle is inspired by ideas seen in various Arena versions by Chrazini (e.g. Clown Arena).
+The technique of generating forest lands in a circle is inspired by ideas seen in various Arena versions by Chrazini (e.g. [Clown Arena](https://www.ageofempires.com/mods/details/22330/)).
 
 ### Black Forest
 
