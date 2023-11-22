@@ -1,5 +1,5 @@
-# The-Cartographers-Maps
-Maps for The Cartographers.
+# The Cartographers Maps
+Maps for *The Cartographers*.
 
 This repository contains the source files used to generate the maps for *The Cartographers*.
 The mod itself may be downloaded here: [https://www.ageofempires.com/mods/details/206556/](https://www.ageofempires.com/mods/details/206556/)
