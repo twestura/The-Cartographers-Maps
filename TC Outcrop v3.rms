@@ -44,10 +44,11 @@ start_random
   percent_chance 50 #define FLIP
 end_random
 
-start_random
+#define TB
+/* start_random
   percent_chance 50 #define TB
   percent_chance 50 #define LR
-end_random
+end_random */
 
 <PLAYER_SETUP>
 direct_placement
