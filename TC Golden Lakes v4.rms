@@ -1204,16 +1204,15 @@ create_object HERDABLE_A {
 }
 
 create_object LUREABLE_A {
+  number_of_objects 2
   set_place_for_every_player
   set_gaia_object_only
-  number_of_objects 2
   min_distance_group_placement 1
   set_circular_placement
   min_distance_to_players 13
   max_distance_to_players 16
-  temp_min_distance_group_placement 20
+  temp_min_distance_group_placement 8
   avoid_forest_zone 2
-  avoid_cliff_zone 2
 }
 
 create_object HERDABLE_B {
@@ -1258,12 +1257,12 @@ endif
     set_gaia_object_only
     set_tight_grouping
     number_of_objects 6
-    group_placement_radius 3
+    group_placement_radius 2
     min_distance_to_players 10
     max_distance_to_players 11
     min_distance_group_placement 4
     temp_min_distance_group_placement 12
-    avoid_forest_zone 2
+    avoid_forest_zone 3
     avoid_cliff_zone 2
   }
 

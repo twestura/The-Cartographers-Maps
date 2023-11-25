@@ -445,7 +445,7 @@ create_object PHON {
   actor_area_to_place_in coast5
   avoid_actor_area coast5-minus-forest5
   actor_area ends3
-  actor_area_radius 4
+  actor_area_radius 3
 }
 
 #OBJECTS9VILS
@@ -483,9 +483,9 @@ create_object FORAGE {
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
-  avoid_actor_area avoid6
-  actor_area avoid6
-  actor_area_radius 6
+  avoid_actor_area avoid5
+  actor_area avoid5
+  actor_area_radius 5
 }
 
 /* Near Gold */
@@ -503,7 +503,7 @@ create_object GOLD {
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
-  avoid_actor_area avoid6
+  avoid_actor_area avoid5
   avoid_actor_area avoid7
   actor_area avoid7
   actor_area_radius 7
@@ -525,7 +525,7 @@ create_object STONE {
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
-  avoid_actor_area avoid6
+  avoid_actor_area avoid5
   avoid_actor_area avoid7
   actor_area avoid7
   actor_area_radius 7
@@ -539,15 +539,15 @@ create_object GOLD {
   set_gaia_object_only
   set_circular_placement
   set_place_for_every_player
-  min_distance_to_players 13
-  max_distance_to_players 21
+  min_distance_to_players 12
+  max_distance_to_players 26
   avoid_forest_zone 5
   max_distance_to_other_zones 4
   min_distance_group_placement 2
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
-  avoid_actor_area avoid6
+  avoid_actor_area avoid5
   avoid_actor_area avoid7
   actor_area avoid7
   actor_area_radius 7
@@ -561,15 +561,15 @@ create_object STONE {
   group_placement_radius 2
   set_circular_placement
   set_place_for_every_player
-  min_distance_to_players 13
-  max_distance_to_players 21
+  min_distance_to_players 12
+  max_distance_to_players 26
   avoid_forest_zone 5
   max_distance_to_other_zones 4
   min_distance_group_placement 2
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
-  avoid_actor_area avoid6
+  avoid_actor_area avoid5
   avoid_actor_area avoid7
   actor_area avoid7
   actor_area_radius 7
@@ -587,7 +587,7 @@ create_object HUNTABLE {
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   min_distance_group_placement 1
-  avoid_actor_area avoid6
+  avoid_actor_area avoid5
   avoid_actor_area ends3
   actor_area hunt7
   actor_area_radius 7
