@@ -2764,8 +2764,10 @@ create_object HERDABLE_B {
     set_gaia_object_only
     set_place_for_every_player
     set_circular_placement
-    min_distance_to_players 18
-    max_distance_to_players 23
+    min_distance_to_players 22
+    max_distance_to_players 25
+	avoid_forest_zone 2
+	min_distance_group_placement 1
 }
 
 	if TERRAIN_DEBUGGING
@@ -4753,8 +4755,8 @@ create_object HERDABLE_B {
 				endif */
 			endif
 
-			create_object LUREABLE_A
-			{
+			/* Player Boar */
+			create_object LUREABLE_A {
 				set_place_for_every_player
 				set_gaia_object_only
 
@@ -4764,9 +4766,12 @@ create_object HERDABLE_B {
 					number_of_objects 2
 				endif
 
-				find_closest
-				temp_min_distance_group_placement 6
-
+				temp_min_distance_group_placement 10
+				min_distance_group_placement 1
+				min_distance_to_players 14
+				max_distance_to_players 16
+				set_circular_placement
+				
 				max_distance_to_other_zones 4
 				avoid_forest_zone 2
 				avoid_cliff_zone 2
@@ -4777,157 +4782,20 @@ create_object HERDABLE_B {
 
 				avoid_actor_area 20 /* Starting Herdable */
 				avoid_actor_area 21 /* Starting Herdable Group */
-				
-				avoid_actor_area 702 /* Minimum Shrub Spacer */
-				avoid_actor_area 802 /* Minimum Primary Gold Divider */
-				avoid_actor_area 812 /* Minimum Secondary Gold Divider */
-				avoid_actor_area 822 /* Minimum Tertiary Gold Divider */
-				avoid_actor_area 902 /* Minimum Primary Stone Divider */
-				avoid_actor_area 912 /* Minimum Secondary Stone Divider */
-
-				avoid_actor_area 5000 /* Resource Distributor */
-				avoid_actor_area 5030 /* Avoid Front Generation */
-				avoid_actor_area 6010 /* Minimum Player Distance */
 			}
 
-			if COMBINE_UNGULATE
-				start_random
-					percent_chance 50 #define SYMBIOSIS_A
-				end_random
-
-				start_random
-					percent_chance 50 #define SYMBIOSIS_B
-				end_random
-
-				start_random
-					percent_chance 50 #define SYMBIOSIS_C
-				end_random
-
-				start_random
-					percent_chance 50 #define SYMBIOSIS_D
-				end_random
-			endif
-
-			if EMPIRE_WARS
-				create_object REVEALER_TEMPORARY
-			else
-				create_object PH_GENERIC_OFF
-			endif
-			{
-				set_place_for_every_player
-
-				if EMPIRE_WARS
-				else
-					set_gaia_object_only
-				endif
-
-				find_closest
-
-				if EMPIRE_WARS
-					actor_area_to_place_in 803 /* Primary Gold */
-				endif
-
-				max_distance_to_other_zones 2
-				avoid_forest_zone 4
-				avoid_cliff_zone 2
-				min_distance_to_map_edge 4
-
-				actor_area 4000
-				actor_area_radius 1
-
-				avoid_actor_area 30 /* Lureable */
-				avoid_actor_area 40 /* Near Ungulate */
-				avoid_actor_area 70 /* Primary Shrub */
-				avoid_actor_area 700 /* Default Primary Shrub Spacer */
-				avoid_actor_area 802 /* Minimum Primary Gold Divider */
-				avoid_actor_area 812 /* Minimum Secondary Gold Divider */
-				avoid_actor_area 822 /* Minimum Tertiary Gold Divider */
-				avoid_actor_area 902 /* Minimum Primary Stone Divider */
-				avoid_actor_area 912 /* Minimum Secondary Stone Divider */
-
-				avoid_actor_area 5000 /* Resource Distributor */
-
-				if EMPIRE_WARS
-					avoid_actor_area 6012 /* Minimum Player Distance */
-				else
-					avoid_actor_area 6018 /* Minimum Player Distance */
-				endif
-			}
-
-			if SYMBIOSIS_A
-				create_object UNGULATE_B
-			else
-				create_object UNGULATE_A
-			endif
-			{
+			create_object UNGULATE_A {
+				number_of_objects 3
 				set_place_for_every_player
 				set_gaia_object_only
-				actor_area_to_place_in 4000
-
-				actor_area 40
-				actor_area_radius 0
-
-				avoid_actor_area 20 /* Starting Herdable */
-				avoid_actor_area 21 /* Starting Herdable Group */
-				avoid_actor_area 40 /* Near Ungulate */
+				set_loose_grouping
+				min_distance_to_players 24
+				max_distance_to_players 26
+				set_circular_placement
+				avoid_forest_zone 2
+				max_distance_to_other_zones 4
+				min_distance_group_placement 1
 			}
-
-			if SYMBIOSIS_B
-				create_object UNGULATE_B
-			else
-				create_object UNGULATE_A
-			endif
-			{
-				set_place_for_every_player
-				set_gaia_object_only
-				actor_area_to_place_in 4000
-
-				actor_area 40
-				actor_area_radius 0
-
-				avoid_actor_area 20 /* Starting Herdable */
-				avoid_actor_area 21 /* Starting Herdable Group */
-				avoid_actor_area 40 /* Near Ungulate */
-			}
-
-			if SYMBIOSIS_C
-				create_object UNGULATE_B
-			else
-				create_object UNGULATE_A
-			endif
-			{
-				set_place_for_every_player
-				set_gaia_object_only
-				actor_area_to_place_in 4000
-
-				actor_area 40
-				actor_area_radius 0
-
-				avoid_actor_area 20 /* Starting Herdable */
-				avoid_actor_area 21 /* Starting Herdable Group */
-				avoid_actor_area 40 /* Near Ungulate */
-			}
-
-			if MAJOR_UNGULATE
-				if SYMBIOSIS_D
-					create_object UNGULATE_B
-				else
-					create_object UNGULATE_A
-				endif
-				{
-					set_place_for_every_player
-					set_gaia_object_only
-					actor_area_to_place_in 4000
-
-					actor_area 40
-					actor_area_radius 0
-
-					avoid_actor_area 20 /* Starting Herdable */
-					avoid_actor_area 21 /* Starting Herdable Group */
-					avoid_actor_area 40 /* Near Ungulate */
-				}
-			endif
-		endif
 
 		if DEATH_MATCH
 		else

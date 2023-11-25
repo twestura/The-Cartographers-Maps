@@ -388,8 +388,8 @@ create_object DEER {
   set_gaia_object_only
   set_circular_placement
   set_loose_grouping
-  avoid_actor_area box16
-  max_distance_to_players 22
+  avoid_actor_area box20
+  max_distance_to_players 26
   avoid_forest_zone 2
   avoid_actor_area forage6
   max_distance_to_other_zones 6
@@ -402,8 +402,8 @@ create_object BOAR {
   temp_min_distance_group_placement 3
   set_gaia_object_only
   set_circular_placement
-  avoid_actor_area box14
-  max_distance_to_players 22
+  min_distance_to_players 14
+  max_distance_to_players 17
   avoid_forest_zone 2
   min_distance_to_map_edge 5
 }

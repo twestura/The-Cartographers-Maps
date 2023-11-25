@@ -1207,6 +1207,7 @@ create_object LUREABLE_A {
   set_place_for_every_player
   set_gaia_object_only
   number_of_objects 2
+  min_distance_group_placement 1
   set_circular_placement
   min_distance_to_players 13
   max_distance_to_players 16
@@ -1220,6 +1221,7 @@ create_object HERDABLE_B {
   set_gaia_object_only
   set_loose_grouping
   number_of_objects 2
+  min_distance_group_placement 1
   set_circular_placement
   min_distance_to_players 14
   max_distance_to_players 17

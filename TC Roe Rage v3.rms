@@ -453,13 +453,6 @@ create_object SKELETON {
 create_object OFF_GRID {
 	set_place_for_every_player
 	max_distance_to_players 0
-	actor_area 16
-	actor_area_radius 15
-}
-
-create_object OFF_GRID {
-	set_place_for_every_player
-	max_distance_to_players 0
 	actor_area 18
 	actor_area_radius 17
 }
@@ -731,11 +724,12 @@ else
 
   create_object BOAR {
     number_of_objects 2
-    temp_min_distance_group_placement 17
+    temp_min_distance_group_placement 7
     set_place_for_every_player
     set_gaia_object_only
-    avoid_actor_area 16
-    max_distance_to_players 20
+    set_circular_placement
+    min_distance_to_players 14
+    max_distance_to_players 18
     avoid_forest_zone 2
   }
 endif

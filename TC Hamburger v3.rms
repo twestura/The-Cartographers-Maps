@@ -445,7 +445,7 @@ create_object PHON {
   actor_area_to_place_in coast5
   avoid_actor_area coast5-minus-forest5
   actor_area ends3
-  actor_area_radius 3
+  actor_area_radius 4
 }
 
 #OBJECTS9VILS
@@ -471,6 +471,7 @@ create_object TERRAIN_BLOCKER {
 create_object FORAGE {
   number_of_objects 6
   set_tight_grouping
+  group_placement_radius 2
   set_gaia_object_only
   set_circular_placement
   set_place_for_every_player
@@ -482,9 +483,9 @@ create_object FORAGE {
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
-  avoid_actor_area avoid7
-  actor_area avoid7
-  actor_area_radius 7
+  avoid_actor_area avoid6
+  actor_area avoid6
+  actor_area_radius 6
 }
 
 /* Near Gold */
@@ -502,6 +503,7 @@ create_object GOLD {
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
+  avoid_actor_area avoid6
   avoid_actor_area avoid7
   actor_area avoid7
   actor_area_radius 7
@@ -523,6 +525,7 @@ create_object STONE {
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
+  avoid_actor_area avoid6
   avoid_actor_area avoid7
   actor_area avoid7
   actor_area_radius 7
@@ -531,6 +534,7 @@ create_object STONE {
 /* Medium Gold */
 create_object GOLD {
   number_of_objects 4
+  group_placement_radius 2
   set_tight_grouping
   set_gaia_object_only
   set_circular_placement
@@ -543,6 +547,7 @@ create_object GOLD {
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
+  avoid_actor_area avoid6
   avoid_actor_area avoid7
   actor_area avoid7
   actor_area_radius 7
@@ -564,6 +569,7 @@ create_object STONE {
   avoid_actor_area ends3
   avoid_actor_area house3
   avoid_actor_area straggler2
+  avoid_actor_area avoid6
   avoid_actor_area avoid7
   actor_area avoid7
   actor_area_radius 7
@@ -571,15 +577,17 @@ create_object STONE {
 
 /* Player Deer */
 create_object HUNTABLE {
-  number_of_objects rnd(3,4)
+  number_of_objects 4
   set_place_for_every_player
   set_gaia_object_only
   set_loose_grouping
   set_circular_placement
-  min_distance_to_players 18
-  max_distance_to_players 24
+  min_distance_to_players 16
+  max_distance_to_players 17
   avoid_forest_zone 2
   max_distance_to_other_zones 2
+  min_distance_group_placement 1
+  avoid_actor_area avoid6
   avoid_actor_area ends3
   actor_area hunt7
   actor_area_radius 7
@@ -593,10 +601,11 @@ create_object LURABLE_A {
   set_place_for_every_player
   set_gaia_object_only
   set_circular_placement
-  min_distance_to_players 16
-  max_distance_to_players 22
+  min_distance_to_players 14
+  max_distance_to_players 16
   avoid_forest_zone 2
   max_distance_to_other_zones 2
+  min_distance_group_placement 1
   avoid_actor_area ends3
   actor_area lure7
   actor_area_radius 7
@@ -610,11 +619,13 @@ create_object HERDABLE_B {
   set_gaia_object_only
   set_loose_grouping
   set_circular_placement
-  min_distance_to_players 16
-  max_distance_to_players 23
+  min_distance_to_players 14
+  max_distance_to_players 17
   max_distance_to_other_zones 2
+  min_distance_group_placement 1
   avoid_actor_area ends3
   avoid_forest_zone 2
+  max_distance_to_other_zones 3
   actor_area herd7
   actor_area_radius 7
   avoid_actor_area herd7
@@ -625,6 +636,7 @@ create_object SCOUT {
   min_distance_to_players 7
   max_distance_to_players 9
   set_circular_placement
+  avoid_actor_area herd7
 }
 
 /* DISTANT GOLD */

@@ -1104,9 +1104,12 @@ create_object DEER {
   set_gaia_object_only
   set_loose_grouping
   set_place_for_every_player
-  min_distance_to_players 20
-  max_distance_to_players 24
+  set_circular_placement
+  min_distance_to_players 16
+  max_distance_to_players 17
   max_distance_to_other_zones 2
+  min_distance_group_placement 1
+  avoid_actor_area berries5
   avoid_forest_zone 2
 }
 
@@ -1114,8 +1117,10 @@ create_object DLC_RHINO {
   number_of_objects 2
   set_gaia_object_only
   set_place_for_every_player
-  min_distance_to_players 16
-  max_distance_to_players 22
+  min_distance_to_players 14
+  max_distance_to_players 16
+  min_distance_group_placement 1
+  temp_min_distance_group_placement 8
   set_circular_placement
   avoid_forest_zone 1
   max_distance_to_other_zones 2

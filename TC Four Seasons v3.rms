@@ -2578,11 +2578,12 @@ create_object GRASS_HUNT {
   set_place_for_every_player
   set_loose_grouping
   set_circular_placement
-  avoid_actor_area player18
-  max_distance_to_players 24
+  avoid_actor_area player14
+  max_distance_to_players 17
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   min_distance_to_map_edge 2
+  avoid_actor_area forage6
   avoid_actor_area snow-region
   avoid_actor_area dirt-region
   avoid_actor_area jungle-region
@@ -2595,11 +2596,12 @@ create_object SNOW_HUNT {
   set_place_for_every_player
   set_loose_grouping
   set_circular_placement
-  avoid_actor_area player18
-  max_distance_to_players 24
+  avoid_actor_area player14
+  max_distance_to_players 17
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   min_distance_to_map_edge 2
+  avoid_actor_area forage6
   avoid_actor_area grass-region
   avoid_actor_area dirt-region
   avoid_actor_area jungle-region
@@ -2612,11 +2614,12 @@ create_object DIRT_HUNT {
   set_place_for_every_player
   set_loose_grouping
   set_circular_placement
-  avoid_actor_area player18
-  max_distance_to_players 24
+  avoid_actor_area player14
+  max_distance_to_players 17
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   min_distance_to_map_edge 2
+  avoid_actor_area forage6
   avoid_actor_area grass-region
   avoid_actor_area snow-region
   avoid_actor_area jungle-region
@@ -2629,11 +2632,12 @@ create_object JUNGLE_HUNT {
   set_place_for_every_player
   set_loose_grouping
   set_circular_placement
-  avoid_actor_area player18
-  max_distance_to_players 24
+  avoid_actor_area player14
+  max_distance_to_players 17
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   min_distance_to_map_edge 2
+  avoid_actor_area forage6
   avoid_actor_area grass-region
   avoid_actor_area snow-region
   avoid_actor_area dirt-region
@@ -2755,8 +2759,8 @@ create_object GRASS_HERDABLE_B {
   set_loose_grouping
   set_place_for_every_player
   set_gaia_object_only
-  avoid_actor_area player18
-  max_distance_to_players 23
+  avoid_actor_area player14
+  max_distance_to_players 17
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   min_distance_to_map_edge 2
@@ -2771,8 +2775,8 @@ create_object SNOW_HERDABLE_B {
   set_loose_grouping
   set_place_for_every_player
   set_gaia_object_only
-  avoid_actor_area player18
-  max_distance_to_players 23
+  avoid_actor_area player14
+  max_distance_to_players 17
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   min_distance_to_map_edge 2
@@ -2787,8 +2791,8 @@ create_object DIRT_HERDABLE_B {
   set_loose_grouping
   set_place_for_every_player
   set_gaia_object_only
-  avoid_actor_area player18
-  max_distance_to_players 23
+  avoid_actor_area player14
+  max_distance_to_players 17
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   min_distance_to_map_edge 2
@@ -2803,8 +2807,8 @@ create_object JUNGLE_HERDABLE_B {
   set_loose_grouping
   set_place_for_every_player
   set_gaia_object_only
-  avoid_actor_area player18
-  max_distance_to_players 23
+  avoid_actor_area player14
+  max_distance_to_players 17
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   min_distance_to_map_edge 2

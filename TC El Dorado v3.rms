@@ -621,9 +621,9 @@ create_object DEER {
   set_loose_grouping
   set_place_for_every_player
   set_gaia_object_only
-  group_placement_radius 3
-  min_distance_group_placement 14
-  max_distance_to_players 20
+  min_distance_group_placement 1
+  min_distance_to_players 16
+  max_distance_to_players 17
   set_circular_placement
   avoid_forest_zone 3
   avoid_actor_area house_surrounding
@@ -634,10 +634,11 @@ create_object DEER {
 create_object JAVELINA {
   set_gaia_object_only
   set_place_for_every_player
-  min_distance_to_players 16
-  max_distance_to_players 21
+  min_distance_to_players 14
+  max_distance_to_players 16
   set_circular_placement
   avoid_forest_zone 2
+  min_distance_group_placement 1
 }
 
 /* Gaia LLAMA */
@@ -646,10 +647,13 @@ create_object HERDABLE_B {
   set_loose_grouping
   set_place_for_every_player
   set_gaia_object_only
-  min_distance_to_players 16
-  max_distance_to_players 20
+  min_distance_group_placement 1
+  min_distance_to_players 14
+  max_distance_to_players 16
   set_circular_placement
   avoid_forest_zone 2
+  actor_area herd6
+  actor_area_radius 6
 }
 
 create_object SCOUT {
@@ -657,6 +661,7 @@ create_object SCOUT {
   avoid_actor_area box6
   actor_area_to_place_in box9
   avoid_forest_zone 1
+  avoid_actor_area herd6
 }
 
 /* RESOURCES IN THE MIDDLE DESERT */

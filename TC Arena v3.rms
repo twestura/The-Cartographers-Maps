@@ -671,7 +671,9 @@ create_object BOAR {
   set_place_for_every_player
   set_gaia_object_only
   avoid_actor_area box11
-  max_distance_to_players 20
+  max_distance_to_players 18
+  temp_min_distance_group_placement 10
+  min_distance_group_placement 1
   set_circular_placement
   terrain_to_place_on PLAYER_TERRAIN
   avoid_forest_zone 1
@@ -684,7 +686,7 @@ create_object HERDABLE_B {
   set_gaia_object_only
   set_loose_grouping
   avoid_actor_area box11
-  max_distance_to_players 20
+  max_distance_to_players 18
   set_circular_placement
   terrain_to_place_on PLAYER_TERRAIN
   avoid_forest_zone 1

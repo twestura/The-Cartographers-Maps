@@ -612,12 +612,16 @@ create_object DLC_IBEX {
   set_loose_grouping
   set_gaia_object_only
   set_place_for_every_player
-  min_distance_to_players 18
-  max_distance_to_players 23
+  min_distance_to_players 16
+  max_distance_to_players 17
+  avoid_actor_area berries6
   set_circular_placement
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   avoid_actor_area map_middle
+  actor_area hunt7
+  actor_area_radius 7
+  avoid_actor_area hunt7
 }
 
 create_object BOAR {
@@ -625,13 +629,15 @@ create_object BOAR {
   set_gaia_object_only
   set_place_for_every_player
   set_circular_placement
-  min_distance_to_players 16
-  max_distance_to_players 22
+  min_distance_to_players 14
+  max_distance_to_players 16
+  min_distance_group_placement 1
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   avoid_actor_area map_middle
   temp_min_distance_group_placement 5
   actor_area boar5
+  actor_area_radius 5
   avoid_actor_area boar5
 }
 
@@ -641,11 +647,14 @@ create_object HERDABLE_B {
   set_circular_placement
   set_gaia_object_only
   set_loose_grouping
-  min_distance_to_players 18
-  max_distance_to_players 23
+  min_distance_to_players 14
+  max_distance_to_players 16
   avoid_forest_zone 2
   max_distance_to_other_zones 2
   avoid_actor_area map_middle
+  actor_area herd7
+  actor_area_radius 7
+  avoid_actor_area herd7
 }
 
 create_object HERDABLE_A {

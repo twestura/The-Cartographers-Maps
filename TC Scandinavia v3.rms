@@ -487,8 +487,9 @@ create_object DEER {
   set_loose_grouping
   set_gaia_object_only
   set_circular_placement
-  min_distance_to_players 16
-  max_distance_to_players 22
+  min_distance_to_players 14
+  max_distance_to_players 17
+  min_distance_group_placement 1
   avoid_forest_zone 4
   avoid_cliff_zone 2
   max_distance_to_other_zones 2
@@ -500,7 +501,8 @@ create_object BOAR {
   set_gaia_object_only
   set_circular_placement
   min_distance_to_players 16
-  max_distance_to_players 18
+  max_distance_to_players 17
+  min_distance_group_placement 1
   avoid_forest_zone 2
   avoid_cliff_zone 2
   max_distance_to_other_zones 2
@@ -512,11 +514,15 @@ create_object HERDABLE_B {
   set_gaia_object_only
   set_circular_placement
   set_loose_grouping
-  min_distance_to_players 18
-  max_distance_to_players 23
+  min_distance_to_players 22
+  max_distance_to_players 25
+  min_distance_group_placement 1
   avoid_forest_zone 2
   avoid_cliff_zone 2
-  max_distance_to_other_zones 2
+  max_distance_to_other_zones 3
+  actor_area herd7
+  actor_area_radius 7
+  avoid_actor_area herd7
 }
 
 create_object HERDABLE_A {
