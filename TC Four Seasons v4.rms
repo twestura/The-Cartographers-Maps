@@ -14,247 +14,1117 @@
 
 /* Determine the assignment of player lands. */
 start_random
-  percent_chance 2
-    #define WEST_1_2
-    #define NORTH_1_4
-    #define SOUTH_3_2
-    #define EAST_3_4
-  percent_chance 2
-    #define WEST_2_1
-    #define NORTH_4_1
-    #define SOUTH_2_3
-    #define EAST_4_3
-  percent_chance 2
-    #define WEST_1_2
-    #define NORTH_1_4
-    #define SOUTH_3_4
-    #define EAST_3_2
-  percent_chance 2
-    #define WEST_2_1
-    #define NORTH_4_1
-    #define SOUTH_4_3
-    #define EAST_2_3
-  percent_chance 2
-    #define WEST_1_2
-    #define NORTH_3_2
-    #define SOUTH_1_4
-    #define EAST_3_4
-  percent_chance 2
-    #define WEST_2_1
-    #define NORTH_2_3
-    #define SOUTH_4_1
-    #define EAST_4_3
-  percent_chance 2
-    #define WEST_1_2
-    #define NORTH_3_2
-    #define SOUTH_3_4
-    #define EAST_1_4
-  percent_chance 2
-    #define WEST_2_1
-    #define NORTH_2_3
-    #define SOUTH_4_3
-    #define EAST_4_1
-  percent_chance 2
-    #define WEST_1_2
-    #define NORTH_3_4
-    #define SOUTH_1_4
-    #define EAST_3_2
-  percent_chance 2
-    #define WEST_2_1
-    #define NORTH_4_3
-    #define SOUTH_4_1
-    #define EAST_2_3
-  percent_chance 2
-    #define WEST_1_2
-    #define NORTH_3_4
-    #define SOUTH_3_2
-    #define EAST_1_4
-  percent_chance 2
-    #define WEST_2_1
-    #define NORTH_4_3
-    #define SOUTH_2_3
-    #define EAST_4_1
-  percent_chance 2
-    #define WEST_1_4
-    #define NORTH_1_2
-    #define SOUTH_3_2
-    #define EAST_3_4
-  percent_chance 2
-    #define WEST_4_1
-    #define NORTH_2_1
-    #define SOUTH_2_3
-    #define EAST_4_3
-  percent_chance 2
-    #define WEST_1_4
-    #define NORTH_1_2
-    #define SOUTH_3_4
-    #define EAST_3_2
-  percent_chance 2
-    #define WEST_4_1
-    #define NORTH_2_1
-    #define SOUTH_4_3
-    #define EAST_2_3
-  percent_chance 2
-    #define WEST_1_4
-    #define NORTH_3_2
-    #define SOUTH_1_2
-    #define EAST_3_4
-  percent_chance 2
-    #define WEST_4_1
-    #define NORTH_2_3
-    #define SOUTH_2_1
-    #define EAST_4_3
-  percent_chance 2
-    #define WEST_1_4
-    #define NORTH_3_2
-    #define SOUTH_3_4
-    #define EAST_1_2
-  percent_chance 2
-    #define WEST_4_1
-    #define NORTH_2_3
-    #define SOUTH_4_3
-    #define EAST_2_1
-  percent_chance 2
-    #define WEST_1_4
-    #define NORTH_3_4
-    #define SOUTH_1_2
-    #define EAST_3_2
-  percent_chance 2
-    #define WEST_4_1
-    #define NORTH_4_3
-    #define SOUTH_2_1
-    #define EAST_2_3
-  percent_chance 2
-    #define WEST_1_4
-    #define NORTH_3_4
-    #define SOUTH_3_2
-    #define EAST_1_2
-  percent_chance 2
-    #define WEST_4_1
-    #define NORTH_4_3
-    #define SOUTH_2_3
-    #define EAST_2_1
-  percent_chance 2
-    #define WEST_3_2
-    #define NORTH_1_2
-    #define SOUTH_1_4
-    #define EAST_3_4
-  percent_chance 2
-    #define WEST_2_3
-    #define NORTH_2_1
-    #define SOUTH_4_1
-    #define EAST_4_3
-  percent_chance 2
-    #define WEST_3_2
-    #define NORTH_1_2
-    #define SOUTH_3_4
-    #define EAST_1_4
-  percent_chance 2
-    #define WEST_2_3
-    #define NORTH_2_1
-    #define SOUTH_4_3
-    #define EAST_4_1
-  percent_chance 2
-    #define WEST_3_2
-    #define NORTH_1_4
-    #define SOUTH_1_2
-    #define EAST_3_4
-  percent_chance 2
-    #define WEST_2_3
-    #define NORTH_4_1
-    #define SOUTH_2_1
-    #define EAST_4_3
-  percent_chance 2
-    #define WEST_3_2
-    #define NORTH_1_4
-    #define SOUTH_3_4
-    #define EAST_1_2
-  percent_chance 2
-    #define WEST_2_3
-    #define NORTH_4_1
-    #define SOUTH_4_3
-    #define EAST_2_1
-  percent_chance 2
-    #define WEST_3_2
-    #define NORTH_3_4
-    #define SOUTH_1_2
-    #define EAST_1_4
-  percent_chance 2
-    #define WEST_2_3
-    #define NORTH_4_3
-    #define SOUTH_2_1
-    #define EAST_4_1
-  percent_chance 2
-    #define WEST_3_2
-    #define NORTH_3_4
-    #define SOUTH_1_4
-    #define EAST_1_2
-  percent_chance 2
-    #define WEST_2_3
-    #define NORTH_4_3
-    #define SOUTH_4_1
-    #define EAST_2_1
-  percent_chance 2
-    #define WEST_3_4
-    #define NORTH_1_2
-    #define SOUTH_1_4
-    #define EAST_3_2
-  percent_chance 2
-    #define WEST_4_3
-    #define NORTH_2_1
-    #define SOUTH_4_1
-    #define EAST_2_3
-  percent_chance 2
-    #define WEST_3_4
-    #define NORTH_1_2
-    #define SOUTH_3_2
-    #define EAST_1_4
-  percent_chance 2
-    #define WEST_4_3
-    #define NORTH_2_1
-    #define SOUTH_2_3
-    #define EAST_4_1
-  percent_chance 2
-    #define WEST_3_4
-    #define NORTH_1_4
-    #define SOUTH_1_2
-    #define EAST_3_2
-  percent_chance 2
-    #define WEST_4_3
-    #define NORTH_4_1
-    #define SOUTH_2_1
-    #define EAST_2_3
-  percent_chance 2
-    #define WEST_3_4
-    #define NORTH_1_4
-    #define SOUTH_3_2
-    #define EAST_1_2
-  percent_chance 2
-    #define WEST_4_3
-    #define NORTH_4_1
-    #define SOUTH_2_3
-    #define EAST_2_1
-  percent_chance 3
-    #define WEST_3_4
-    #define NORTH_3_2
-    #define SOUTH_1_2
-    #define EAST_1_4
-  percent_chance 3
-    #define WEST_4_3
-    #define NORTH_2_3
-    #define SOUTH_2_1
-    #define EAST_4_1
-  percent_chance 3
-    #define WEST_3_4
-    #define NORTH_3_2
-    #define SOUTH_1_4
-    #define EAST_1_2
-  percent_chance 3
-    #define WEST_4_3
-    #define NORTH_2_3
-    #define SOUTH_4_1
-    #define EAST_2_1
+  percent_chance 50 #define TC_A
 end_random
+
+start_random
+  percent_chance 1 #define TC_0
+  percent_chance 1 #define TC_1
+  percent_chance 1 #define TC_2
+  percent_chance 1 #define TC_3
+  percent_chance 1 #define TC_4
+  percent_chance 1 #define TC_5
+  percent_chance 1 #define TC_6
+  percent_chance 1 #define TC_7
+  percent_chance 1 #define TC_8
+  percent_chance 1 #define TC_9
+  percent_chance 1 #define TC_10
+  percent_chance 1 #define TC_11
+  percent_chance 1 #define TC_12
+  percent_chance 1 #define TC_13
+  percent_chance 1 #define TC_14
+  percent_chance 1 #define TC_15
+  percent_chance 1 #define TC_16
+  percent_chance 1 #define TC_17
+  percent_chance 1 #define TC_18
+  percent_chance 1 #define TC_19
+  percent_chance 1 #define TC_20
+  percent_chance 1 #define TC_21
+  percent_chance 1 #define TC_22
+  percent_chance 1 #define TC_23
+  percent_chance 1 #define TC_24
+  percent_chance 1 #define TC_25
+  percent_chance 1 #define TC_26
+  percent_chance 1 #define TC_27
+  percent_chance 1 #define TC_28
+  percent_chance 1 #define TC_29
+  percent_chance 1 #define TC_30
+  percent_chance 1 #define TC_31
+  percent_chance 1 #define TC_32
+  percent_chance 1 #define TC_33
+  percent_chance 1 #define TC_34
+  percent_chance 1 #define TC_35
+  percent_chance 1 #define TC_36
+  percent_chance 1 #define TC_37
+  percent_chance 1 #define TC_38
+  percent_chance 1 #define TC_39
+  percent_chance 1 #define TC_40
+  percent_chance 1 #define TC_41
+  percent_chance 1 #define TC_42
+  percent_chance 1 #define TC_43
+  percent_chance 1 #define TC_44
+  percent_chance 1 #define TC_45
+  percent_chance 1 #define TC_46
+  percent_chance 1 #define TC_47
+  percent_chance 1 #define TC_48
+  percent_chance 1 #define TC_49
+  percent_chance 1 #define TC_50
+  percent_chance 1 #define TC_51
+  percent_chance 1 #define TC_52
+  percent_chance 1 #define TC_53
+  percent_chance 1 #define TC_54
+  percent_chance 1 #define TC_55
+  percent_chance 1 #define TC_56
+  percent_chance 1 #define TC_57
+  percent_chance 1 #define TC_58
+  percent_chance 1 #define TC_59
+  percent_chance 1 #define TC_60
+  percent_chance 1 #define TC_61
+  percent_chance 1 #define TC_62
+  percent_chance 1 #define TC_63
+  percent_chance 1 #define TC_64
+  percent_chance 1 #define TC_65
+  percent_chance 1 #define TC_66
+  percent_chance 1 #define TC_67
+  percent_chance 1 #define TC_68
+  percent_chance 1 #define TC_69
+  percent_chance 1 #define TC_70
+  percent_chance 1 #define TC_71
+  percent_chance 1 #define TC_72
+  percent_chance 1 #define TC_73
+  percent_chance 1 #define TC_74
+  percent_chance 1 #define TC_75
+  percent_chance 1 #define TC_76
+  percent_chance 1 #define TC_77
+  percent_chance 1 #define TC_78
+  percent_chance 1 #define TC_79
+  percent_chance 1 #define TC_80
+  percent_chance 1 #define TC_81
+  percent_chance 1 #define TC_82
+  percent_chance 1 #define TC_83
+  percent_chance 1 #define TC_84
+  percent_chance 1 #define TC_85
+  percent_chance 1 #define TC_86
+  percent_chance 1 #define TC_87
+  percent_chance 1 #define TC_88
+  percent_chance 1 #define TC_89
+  percent_chance 1 #define TC_90
+  percent_chance 1 #define TC_91
+  percent_chance 1 #define TC_92
+  percent_chance 1 #define TC_93
+  percent_chance 1 #define TC_94
+  percent_chance 1 #define TC_95
+  percent_chance 1 #define TC_96
+  percent_chance 1 #define TC_97
+  percent_chance 1 #define TC_98
+  percent_chance 1 #define TC_99
+end_random
+
+if TC_A
+  if TC_0
+    #define NORTH_1_2
+    #define EAST_1_4
+    #define SOUTH_3_2
+    #define WEST_3_4
+  elseif TC_1
+    #define NORTH_1_2
+    #define EAST_1_4
+    #define SOUTH_3_2
+    #define WEST_4_3
+  elseif TC_2
+    #define NORTH_1_2
+    #define EAST_1_4
+    #define SOUTH_2_3
+    #define WEST_4_3
+  elseif TC_3
+    #define NORTH_1_2
+    #define EAST_4_1
+    #define SOUTH_3_2
+    #define WEST_3_4
+  elseif TC_4
+    #define NORTH_1_2
+    #define EAST_4_1
+    #define SOUTH_3_2
+    #define WEST_4_3
+  elseif TC_5
+    #define NORTH_1_2
+    #define EAST_4_1
+    #define SOUTH_2_3
+    #define WEST_4_3
+  elseif TC_6
+    #define NORTH_2_1
+    #define EAST_4_1
+    #define SOUTH_3_2
+    #define WEST_3_4
+  elseif TC_7
+    #define NORTH_2_1
+    #define EAST_4_1
+    #define SOUTH_3_2
+    #define WEST_4_3
+  elseif TC_8
+    #define NORTH_2_1
+    #define EAST_4_1
+    #define SOUTH_2_3
+    #define WEST_4_3
+  elseif TC_9
+    #define NORTH_1_2
+    #define EAST_1_4
+    #define SOUTH_3_4
+    #define WEST_3_2
+  elseif TC_10
+    #define NORTH_1_2
+    #define EAST_1_4
+    #define SOUTH_3_4
+    #define WEST_2_3
+  elseif TC_11
+    #define NORTH_1_2
+    #define EAST_4_1
+    #define SOUTH_3_4
+    #define WEST_3_2
+  elseif TC_12
+    #define NORTH_1_2
+    #define EAST_4_1
+    #define SOUTH_3_4
+    #define WEST_2_3
+  elseif TC_13
+    #define NORTH_1_2
+    #define EAST_4_1
+    #define SOUTH_4_3
+    #define WEST_2_3
+  elseif TC_14
+    #define NORTH_2_1
+    #define EAST_4_1
+    #define SOUTH_3_4
+    #define WEST_2_3
+  elseif TC_15
+    #define NORTH_2_1
+    #define EAST_4_1
+    #define SOUTH_4_3
+    #define WEST_2_3
+  elseif TC_16
+    #define NORTH_1_2
+    #define EAST_3_2
+    #define SOUTH_1_4
+    #define WEST_3_4
+  elseif TC_17
+    #define NORTH_1_2
+    #define EAST_3_2
+    #define SOUTH_4_1
+    #define WEST_3_4
+  elseif TC_18
+    #define NORTH_1_2
+    #define EAST_3_2
+    #define SOUTH_4_1
+    #define WEST_4_3
+  elseif TC_19
+    #define NORTH_2_1
+    #define EAST_3_2
+    #define SOUTH_1_4
+    #define WEST_3_4
+  elseif TC_20
+    #define NORTH_2_1
+    #define EAST_3_2
+    #define SOUTH_4_1
+    #define WEST_3_4
+  elseif TC_21
+    #define NORTH_2_1
+    #define EAST_3_2
+    #define SOUTH_4_1
+    #define WEST_4_3
+  elseif TC_22
+    #define NORTH_2_1
+    #define EAST_2_3
+    #define SOUTH_1_4
+    #define WEST_3_4
+  elseif TC_23
+    #define NORTH_2_1
+    #define EAST_2_3
+    #define SOUTH_4_1
+    #define WEST_3_4
+  elseif TC_24
+    #define NORTH_2_1
+    #define EAST_2_3
+    #define SOUTH_4_1
+    #define WEST_4_3
+  elseif TC_25
+    #define NORTH_1_2
+    #define EAST_3_2
+    #define SOUTH_3_4
+    #define WEST_1_4
+  elseif TC_26
+    #define NORTH_1_2
+    #define EAST_3_2
+    #define SOUTH_4_3
+    #define WEST_1_4
+  elseif TC_27
+    #define NORTH_2_1
+    #define EAST_3_2
+    #define SOUTH_3_4
+    #define WEST_1_4
+  elseif TC_28
+    #define NORTH_2_1
+    #define EAST_3_2
+    #define SOUTH_4_3
+    #define WEST_1_4
+  elseif TC_29
+    #define NORTH_2_1
+    #define EAST_3_2
+    #define SOUTH_4_3
+    #define WEST_4_1
+  elseif TC_30
+    #define NORTH_2_1
+    #define EAST_2_3
+    #define SOUTH_4_3
+    #define WEST_1_4
+  elseif TC_31
+    #define NORTH_2_1
+    #define EAST_2_3
+    #define SOUTH_4_3
+    #define WEST_4_1
+  elseif TC_32
+    #define NORTH_1_2
+    #define EAST_3_4
+    #define SOUTH_1_4
+    #define WEST_3_2
+  elseif TC_33
+    #define NORTH_1_2
+    #define EAST_3_4
+    #define SOUTH_1_4
+    #define WEST_2_3
+  elseif TC_34
+    #define NORTH_1_2
+    #define EAST_4_3
+    #define SOUTH_1_4
+    #define WEST_3_2
+  elseif TC_35
+    #define NORTH_1_2
+    #define EAST_4_3
+    #define SOUTH_1_4
+    #define WEST_2_3
+  elseif TC_36
+    #define NORTH_1_2
+    #define EAST_4_3
+    #define SOUTH_4_1
+    #define WEST_3_2
+  elseif TC_37
+    #define NORTH_1_2
+    #define EAST_4_3
+    #define SOUTH_4_1
+    #define WEST_2_3
+  elseif TC_38
+    #define NORTH_2_1
+    #define EAST_3_4
+    #define SOUTH_1_4
+    #define WEST_2_3
+  elseif TC_39
+    #define NORTH_2_1
+    #define EAST_4_3
+    #define SOUTH_1_4
+    #define WEST_2_3
+  elseif TC_40
+    #define NORTH_2_1
+    #define EAST_4_3
+    #define SOUTH_4_1
+    #define WEST_2_3
+  elseif TC_41
+    #define NORTH_1_2
+    #define EAST_3_4
+    #define SOUTH_3_2
+    #define WEST_1_4
+  elseif TC_42
+    #define NORTH_1_2
+    #define EAST_3_4
+    #define SOUTH_2_3
+    #define WEST_1_4
+  elseif TC_43
+    #define NORTH_1_2
+    #define EAST_4_3
+    #define SOUTH_2_3
+    #define WEST_1_4
+  elseif TC_44
+    #define NORTH_2_1
+    #define EAST_3_4
+    #define SOUTH_3_2
+    #define WEST_1_4
+  elseif TC_45
+    #define NORTH_2_1
+    #define EAST_3_4
+    #define SOUTH_3_2
+    #define WEST_4_1
+  elseif TC_46
+    #define NORTH_2_1
+    #define EAST_3_4
+    #define SOUTH_2_3
+    #define WEST_1_4
+  elseif TC_47
+    #define NORTH_2_1
+    #define EAST_3_4
+    #define SOUTH_2_3
+    #define WEST_4_1
+  elseif TC_48
+    #define NORTH_2_1
+    #define EAST_4_3
+    #define SOUTH_2_3
+    #define WEST_1_4
+  elseif TC_49
+    #define NORTH_2_1
+    #define EAST_4_3
+    #define SOUTH_2_3
+    #define WEST_4_1
+  elseif TC_50
+    #define NORTH_1_4
+    #define EAST_1_2
+    #define SOUTH_3_2
+    #define WEST_3_4
+  elseif TC_51
+    #define NORTH_1_4
+    #define EAST_1_2
+    #define SOUTH_3_2
+    #define WEST_4_3
+  elseif TC_52
+    #define NORTH_1_4
+    #define EAST_2_1
+    #define SOUTH_3_2
+    #define WEST_3_4
+  elseif TC_53
+    #define NORTH_1_4
+    #define EAST_2_1
+    #define SOUTH_3_2
+    #define WEST_4_3
+  elseif TC_54
+    #define NORTH_1_4
+    #define EAST_2_1
+    #define SOUTH_2_3
+    #define WEST_4_3
+  elseif TC_55
+    #define NORTH_4_1
+    #define EAST_2_1
+    #define SOUTH_3_2
+    #define WEST_4_3
+  elseif TC_56
+    #define NORTH_4_1
+    #define EAST_2_1
+    #define SOUTH_2_3
+    #define WEST_4_3
+  elseif TC_57
+    #define NORTH_1_4
+    #define EAST_1_2
+    #define SOUTH_3_4
+    #define WEST_3_2
+  elseif TC_58
+    #define NORTH_1_4
+    #define EAST_1_2
+    #define SOUTH_3_4
+    #define WEST_2_3
+  elseif TC_59
+    #define NORTH_1_4
+    #define EAST_1_2
+    #define SOUTH_4_3
+    #define WEST_2_3
+  elseif TC_60
+    #define NORTH_1_4
+    #define EAST_2_1
+    #define SOUTH_3_4
+    #define WEST_3_2
+  elseif TC_61
+    #define NORTH_1_4
+    #define EAST_2_1
+    #define SOUTH_3_4
+    #define WEST_2_3
+  elseif TC_62
+    #define NORTH_1_4
+    #define EAST_2_1
+    #define SOUTH_4_3
+    #define WEST_2_3
+  elseif TC_63
+    #define NORTH_4_1
+    #define EAST_2_1
+    #define SOUTH_3_4
+    #define WEST_3_2
+  elseif TC_64
+    #define NORTH_4_1
+    #define EAST_2_1
+    #define SOUTH_3_4
+    #define WEST_2_3
+  elseif TC_65
+    #define NORTH_4_1
+    #define EAST_2_1
+    #define SOUTH_4_3
+    #define WEST_2_3
+  elseif TC_66
+    #define NORTH_1_4
+    #define EAST_3_2
+    #define SOUTH_1_2
+    #define WEST_3_4
+  elseif TC_67
+    #define NORTH_1_4
+    #define EAST_3_2
+    #define SOUTH_1_2
+    #define WEST_4_3
+  elseif TC_68
+    #define NORTH_1_4
+    #define EAST_2_3
+    #define SOUTH_1_2
+    #define WEST_3_4
+  elseif TC_69
+    #define NORTH_1_4
+    #define EAST_2_3
+    #define SOUTH_1_2
+    #define WEST_4_3
+  elseif TC_70
+    #define NORTH_1_4
+    #define EAST_2_3
+    #define SOUTH_2_1
+    #define WEST_3_4
+  elseif TC_71
+    #define NORTH_1_4
+    #define EAST_2_3
+    #define SOUTH_2_1
+    #define WEST_4_3
+  elseif TC_72
+    #define NORTH_4_1
+    #define EAST_3_2
+    #define SOUTH_1_2
+    #define WEST_4_3
+  elseif TC_73
+    #define NORTH_4_1
+    #define EAST_2_3
+    #define SOUTH_1_2
+    #define WEST_4_3
+  elseif TC_74
+    #define NORTH_4_1
+    #define EAST_2_3
+    #define SOUTH_2_1
+    #define WEST_4_3
+  elseif TC_75
+    #define NORTH_1_4
+    #define EAST_3_2
+    #define SOUTH_3_4
+    #define WEST_1_2
+  elseif TC_76
+    #define NORTH_1_4
+    #define EAST_3_2
+    #define SOUTH_4_3
+    #define WEST_1_2
+  elseif TC_77
+    #define NORTH_1_4
+    #define EAST_2_3
+    #define SOUTH_4_3
+    #define WEST_1_2
+  elseif TC_78
+    #define NORTH_4_1
+    #define EAST_3_2
+    #define SOUTH_3_4
+    #define WEST_1_2
+  elseif TC_79
+    #define NORTH_4_1
+    #define EAST_3_2
+    #define SOUTH_3_4
+    #define WEST_2_1
+  elseif TC_80
+    #define NORTH_4_1
+    #define EAST_3_2
+    #define SOUTH_4_3
+    #define WEST_1_2
+  elseif TC_81
+    #define NORTH_4_1
+    #define EAST_3_2
+    #define SOUTH_4_3
+    #define WEST_2_1
+  elseif TC_82
+    #define NORTH_4_1
+    #define EAST_2_3
+    #define SOUTH_4_3
+    #define WEST_1_2
+  elseif TC_83
+    #define NORTH_4_1
+    #define EAST_2_3
+    #define SOUTH_4_3
+    #define WEST_2_1
+  elseif TC_84
+    #define NORTH_1_4
+    #define EAST_3_4
+    #define SOUTH_1_2
+    #define WEST_3_2
+  elseif TC_85
+    #define NORTH_1_4
+    #define EAST_3_4
+    #define SOUTH_2_1
+    #define WEST_3_2
+  elseif TC_86
+    #define NORTH_1_4
+    #define EAST_3_4
+    #define SOUTH_2_1
+    #define WEST_2_3
+  elseif TC_87
+    #define NORTH_4_1
+    #define EAST_3_4
+    #define SOUTH_1_2
+    #define WEST_3_2
+  elseif TC_88
+    #define NORTH_4_1
+    #define EAST_3_4
+    #define SOUTH_2_1
+    #define WEST_3_2
+  elseif TC_89
+    #define NORTH_4_1
+    #define EAST_3_4
+    #define SOUTH_2_1
+    #define WEST_2_3
+  elseif TC_90
+    #define NORTH_4_1
+    #define EAST_4_3
+    #define SOUTH_1_2
+    #define WEST_3_2
+  elseif TC_91
+    #define NORTH_4_1
+    #define EAST_4_3
+    #define SOUTH_2_1
+    #define WEST_3_2
+  elseif TC_92
+    #define NORTH_4_1
+    #define EAST_4_3
+    #define SOUTH_2_1
+    #define WEST_2_3
+  elseif TC_93
+    #define NORTH_1_4
+    #define EAST_3_4
+    #define SOUTH_3_2
+    #define WEST_1_2
+  elseif TC_94
+    #define NORTH_1_4
+    #define EAST_3_4
+    #define SOUTH_2_3
+    #define WEST_1_2
+  elseif TC_95
+    #define NORTH_4_1
+    #define EAST_3_4
+    #define SOUTH_3_2
+    #define WEST_1_2
+  elseif TC_96
+    #define NORTH_4_1
+    #define EAST_3_4
+    #define SOUTH_2_3
+    #define WEST_1_2
+  elseif TC_97
+    #define NORTH_4_1
+    #define EAST_3_4
+    #define SOUTH_2_3
+    #define WEST_2_1
+  elseif TC_98
+    #define NORTH_4_1
+    #define EAST_4_3
+    #define SOUTH_2_3
+    #define WEST_1_2
+  elseif TC_99
+    #define NORTH_4_1
+    #define EAST_4_3
+    #define SOUTH_2_3
+    #define WEST_2_1
+  endif
+else
+  if TC_0
+    #define NORTH_3_2
+    #define EAST_1_2
+    #define SOUTH_1_4
+    #define WEST_3_4
+  elseif TC_1
+    #define NORTH_3_2
+    #define EAST_1_2
+    #define SOUTH_4_1
+    #define WEST_3_4
+  elseif TC_2
+    #define NORTH_2_3
+    #define EAST_1_2
+    #define SOUTH_1_4
+    #define WEST_3_4
+  elseif TC_3
+    #define NORTH_2_3
+    #define EAST_1_2
+    #define SOUTH_4_1
+    #define WEST_3_4
+  elseif TC_4
+    #define NORTH_2_3
+    #define EAST_1_2
+    #define SOUTH_4_1
+    #define WEST_4_3
+  elseif TC_5
+    #define NORTH_2_3
+    #define EAST_2_1
+    #define SOUTH_4_1
+    #define WEST_3_4
+  elseif TC_6
+    #define NORTH_2_3
+    #define EAST_2_1
+    #define SOUTH_4_1
+    #define WEST_4_3
+  elseif TC_7
+    #define NORTH_3_2
+    #define EAST_1_2
+    #define SOUTH_3_4
+    #define WEST_1_4
+  elseif TC_8
+    #define NORTH_3_2
+    #define EAST_1_2
+    #define SOUTH_4_3
+    #define WEST_1_4
+  elseif TC_9
+    #define NORTH_3_2
+    #define EAST_1_2
+    #define SOUTH_4_3
+    #define WEST_4_1
+  elseif TC_10
+    #define NORTH_2_3
+    #define EAST_1_2
+    #define SOUTH_3_4
+    #define WEST_1_4
+  elseif TC_11
+    #define NORTH_2_3
+    #define EAST_1_2
+    #define SOUTH_4_3
+    #define WEST_1_4
+  elseif TC_12
+    #define NORTH_2_3
+    #define EAST_1_2
+    #define SOUTH_4_3
+    #define WEST_4_1
+  elseif TC_13
+    #define NORTH_2_3
+    #define EAST_2_1
+    #define SOUTH_3_4
+    #define WEST_1_4
+  elseif TC_14
+    #define NORTH_2_3
+    #define EAST_2_1
+    #define SOUTH_4_3
+    #define WEST_1_4
+  elseif TC_15
+    #define NORTH_2_3
+    #define EAST_2_1
+    #define SOUTH_4_3
+    #define WEST_4_1
+  elseif TC_16
+    #define NORTH_3_2
+    #define EAST_1_4
+    #define SOUTH_1_2
+    #define WEST_3_4
+  elseif TC_17
+    #define NORTH_3_2
+    #define EAST_1_4
+    #define SOUTH_2_1
+    #define WEST_3_4
+  elseif TC_18
+    #define NORTH_3_2
+    #define EAST_4_1
+    #define SOUTH_2_1
+    #define WEST_3_4
+  elseif TC_19
+    #define NORTH_2_3
+    #define EAST_1_4
+    #define SOUTH_1_2
+    #define WEST_3_4
+  elseif TC_20
+    #define NORTH_2_3
+    #define EAST_1_4
+    #define SOUTH_1_2
+    #define WEST_4_3
+  elseif TC_21
+    #define NORTH_2_3
+    #define EAST_1_4
+    #define SOUTH_2_1
+    #define WEST_3_4
+  elseif TC_22
+    #define NORTH_2_3
+    #define EAST_1_4
+    #define SOUTH_2_1
+    #define WEST_4_3
+  elseif TC_23
+    #define NORTH_2_3
+    #define EAST_4_1
+    #define SOUTH_2_1
+    #define WEST_3_4
+  elseif TC_24
+    #define NORTH_2_3
+    #define EAST_4_1
+    #define SOUTH_2_1
+    #define WEST_4_3
+  elseif TC_25
+    #define NORTH_3_2
+    #define EAST_1_4
+    #define SOUTH_3_4
+    #define WEST_1_2
+  elseif TC_26
+    #define NORTH_3_2
+    #define EAST_1_4
+    #define SOUTH_3_4
+    #define WEST_2_1
+  elseif TC_27
+    #define NORTH_3_2
+    #define EAST_4_1
+    #define SOUTH_3_4
+    #define WEST_1_2
+  elseif TC_28
+    #define NORTH_3_2
+    #define EAST_4_1
+    #define SOUTH_3_4
+    #define WEST_2_1
+  elseif TC_29
+    #define NORTH_3_2
+    #define EAST_4_1
+    #define SOUTH_4_3
+    #define WEST_1_2
+  elseif TC_30
+    #define NORTH_3_2
+    #define EAST_4_1
+    #define SOUTH_4_3
+    #define WEST_2_1
+  elseif TC_31
+    #define NORTH_2_3
+    #define EAST_1_4
+    #define SOUTH_3_4
+    #define WEST_2_1
+  elseif TC_32
+    #define NORTH_2_3
+    #define EAST_4_1
+    #define SOUTH_3_4
+    #define WEST_2_1
+  elseif TC_33
+    #define NORTH_2_3
+    #define EAST_4_1
+    #define SOUTH_4_3
+    #define WEST_2_1
+  elseif TC_34
+    #define NORTH_3_2
+    #define EAST_3_4
+    #define SOUTH_1_2
+    #define WEST_1_4
+  elseif TC_35
+    #define NORTH_3_2
+    #define EAST_3_4
+    #define SOUTH_1_2
+    #define WEST_4_1
+  elseif TC_36
+    #define NORTH_3_2
+    #define EAST_3_4
+    #define SOUTH_2_1
+    #define WEST_4_1
+  elseif TC_37
+    #define NORTH_3_2
+    #define EAST_4_3
+    #define SOUTH_1_2
+    #define WEST_1_4
+  elseif TC_38
+    #define NORTH_3_2
+    #define EAST_4_3
+    #define SOUTH_1_2
+    #define WEST_4_1
+  elseif TC_39
+    #define NORTH_3_2
+    #define EAST_4_3
+    #define SOUTH_2_1
+    #define WEST_4_1
+  elseif TC_40
+    #define NORTH_2_3
+    #define EAST_4_3
+    #define SOUTH_1_2
+    #define WEST_1_4
+  elseif TC_41
+    #define NORTH_2_3
+    #define EAST_4_3
+    #define SOUTH_1_2
+    #define WEST_4_1
+  elseif TC_42
+    #define NORTH_2_3
+    #define EAST_4_3
+    #define SOUTH_2_1
+    #define WEST_4_1
+  elseif TC_43
+    #define NORTH_3_2
+    #define EAST_3_4
+    #define SOUTH_1_4
+    #define WEST_1_2
+  elseif TC_44
+    #define NORTH_3_2
+    #define EAST_3_4
+    #define SOUTH_1_4
+    #define WEST_2_1
+  elseif TC_45
+    #define NORTH_3_2
+    #define EAST_4_3
+    #define SOUTH_1_4
+    #define WEST_1_2
+  elseif TC_46
+    #define NORTH_3_2
+    #define EAST_4_3
+    #define SOUTH_1_4
+    #define WEST_2_1
+  elseif TC_47
+    #define NORTH_3_2
+    #define EAST_4_3
+    #define SOUTH_4_1
+    #define WEST_2_1
+  elseif TC_48
+    #define NORTH_2_3
+    #define EAST_4_3
+    #define SOUTH_1_4
+    #define WEST_2_1
+  elseif TC_49
+    #define NORTH_2_3
+    #define EAST_4_3
+    #define SOUTH_4_1
+    #define WEST_2_1
+  elseif TC_50
+    #define NORTH_3_4
+    #define EAST_1_2
+    #define SOUTH_1_4
+    #define WEST_3_2
+  elseif TC_51
+    #define NORTH_3_4
+    #define EAST_1_2
+    #define SOUTH_4_1
+    #define WEST_3_2
+  elseif TC_52
+    #define NORTH_3_4
+    #define EAST_2_1
+    #define SOUTH_4_1
+    #define WEST_3_2
+  elseif TC_53
+    #define NORTH_4_3
+    #define EAST_1_2
+    #define SOUTH_1_4
+    #define WEST_3_2
+  elseif TC_54
+    #define NORTH_4_3
+    #define EAST_1_2
+    #define SOUTH_1_4
+    #define WEST_2_3
+  elseif TC_55
+    #define NORTH_4_3
+    #define EAST_1_2
+    #define SOUTH_4_1
+    #define WEST_3_2
+  elseif TC_56
+    #define NORTH_4_3
+    #define EAST_1_2
+    #define SOUTH_4_1
+    #define WEST_2_3
+  elseif TC_57
+    #define NORTH_4_3
+    #define EAST_2_1
+    #define SOUTH_4_1
+    #define WEST_3_2
+  elseif TC_58
+    #define NORTH_4_3
+    #define EAST_2_1
+    #define SOUTH_4_1
+    #define WEST_2_3
+  elseif TC_59
+    #define NORTH_3_4
+    #define EAST_1_2
+    #define SOUTH_3_2
+    #define WEST_1_4
+  elseif TC_60
+    #define NORTH_3_4
+    #define EAST_1_2
+    #define SOUTH_3_2
+    #define WEST_4_1
+  elseif TC_61
+    #define NORTH_3_4
+    #define EAST_2_1
+    #define SOUTH_3_2
+    #define WEST_1_4
+  elseif TC_62
+    #define NORTH_3_4
+    #define EAST_2_1
+    #define SOUTH_3_2
+    #define WEST_4_1
+  elseif TC_63
+    #define NORTH_3_4
+    #define EAST_2_1
+    #define SOUTH_2_3
+    #define WEST_1_4
+  elseif TC_64
+    #define NORTH_3_4
+    #define EAST_2_1
+    #define SOUTH_2_3
+    #define WEST_4_1
+  elseif TC_65
+    #define NORTH_4_3
+    #define EAST_1_2
+    #define SOUTH_3_2
+    #define WEST_4_1
+  elseif TC_66
+    #define NORTH_4_3
+    #define EAST_2_1
+    #define SOUTH_3_2
+    #define WEST_4_1
+  elseif TC_67
+    #define NORTH_4_3
+    #define EAST_2_1
+    #define SOUTH_2_3
+    #define WEST_4_1
+  elseif TC_68
+    #define NORTH_3_4
+    #define EAST_1_4
+    #define SOUTH_1_2
+    #define WEST_3_2
+  elseif TC_69
+    #define NORTH_3_4
+    #define EAST_1_4
+    #define SOUTH_2_1
+    #define WEST_3_2
+  elseif TC_70
+    #define NORTH_4_3
+    #define EAST_1_4
+    #define SOUTH_1_2
+    #define WEST_3_2
+  elseif TC_71
+    #define NORTH_4_3
+    #define EAST_1_4
+    #define SOUTH_2_1
+    #define WEST_3_2
+  elseif TC_72
+    #define NORTH_4_3
+    #define EAST_1_4
+    #define SOUTH_2_1
+    #define WEST_2_3
+  elseif TC_73
+    #define NORTH_4_3
+    #define EAST_4_1
+    #define SOUTH_2_1
+    #define WEST_3_2
+  elseif TC_74
+    #define NORTH_4_3
+    #define EAST_4_1
+    #define SOUTH_2_1
+    #define WEST_2_3
+  elseif TC_75
+    #define NORTH_3_4
+    #define EAST_1_4
+    #define SOUTH_3_2
+    #define WEST_1_2
+  elseif TC_76
+    #define NORTH_3_4
+    #define EAST_1_4
+    #define SOUTH_2_3
+    #define WEST_1_2
+  elseif TC_77
+    #define NORTH_3_4
+    #define EAST_1_4
+    #define SOUTH_2_3
+    #define WEST_2_1
+  elseif TC_78
+    #define NORTH_4_3
+    #define EAST_1_4
+    #define SOUTH_3_2
+    #define WEST_1_2
+  elseif TC_79
+    #define NORTH_4_3
+    #define EAST_1_4
+    #define SOUTH_2_3
+    #define WEST_1_2
+  elseif TC_80
+    #define NORTH_4_3
+    #define EAST_1_4
+    #define SOUTH_2_3
+    #define WEST_2_1
+  elseif TC_81
+    #define NORTH_4_3
+    #define EAST_4_1
+    #define SOUTH_3_2
+    #define WEST_1_2
+  elseif TC_82
+    #define NORTH_4_3
+    #define EAST_4_1
+    #define SOUTH_2_3
+    #define WEST_1_2
+  elseif TC_83
+    #define NORTH_4_3
+    #define EAST_4_1
+    #define SOUTH_2_3
+    #define WEST_2_1
+  elseif TC_84
+    #define NORTH_3_4
+    #define EAST_3_2
+    #define SOUTH_1_2
+    #define WEST_1_4
+  elseif TC_85
+    #define NORTH_3_4
+    #define EAST_3_2
+    #define SOUTH_1_2
+    #define WEST_4_1
+  elseif TC_86
+    #define NORTH_3_4
+    #define EAST_2_3
+    #define SOUTH_1_2
+    #define WEST_1_4
+  elseif TC_87
+    #define NORTH_3_4
+    #define EAST_2_3
+    #define SOUTH_1_2
+    #define WEST_4_1
+  elseif TC_88
+    #define NORTH_3_4
+    #define EAST_2_3
+    #define SOUTH_2_1
+    #define WEST_4_1
+  elseif TC_89
+    #define NORTH_4_3
+    #define EAST_2_3
+    #define SOUTH_1_2
+    #define WEST_4_1
+  elseif TC_90
+    #define NORTH_4_3
+    #define EAST_2_3
+    #define SOUTH_2_1
+    #define WEST_4_1
+  elseif TC_91
+    #define NORTH_3_4
+    #define EAST_3_2
+    #define SOUTH_1_4
+    #define WEST_1_2
+  elseif TC_92
+    #define NORTH_3_4
+    #define EAST_3_2
+    #define SOUTH_1_4
+    #define WEST_2_1
+  elseif TC_93
+    #define NORTH_3_4
+    #define EAST_3_2
+    #define SOUTH_4_1
+    #define WEST_2_1
+  elseif TC_94
+    #define NORTH_3_4
+    #define EAST_2_3
+    #define SOUTH_1_4
+    #define WEST_1_2
+  elseif TC_95
+    #define NORTH_3_4
+    #define EAST_2_3
+    #define SOUTH_1_4
+    #define WEST_2_1
+  elseif TC_96
+    #define NORTH_3_4
+    #define EAST_2_3
+    #define SOUTH_4_1
+    #define WEST_2_1
+  elseif TC_97
+    #define NORTH_4_3
+    #define EAST_2_3
+    #define SOUTH_1_4
+    #define WEST_1_2
+  elseif TC_98
+    #define NORTH_4_3
+    #define EAST_2_3
+    #define SOUTH_1_4
+    #define WEST_2_1
+  elseif TC_99
+    #define NORTH_4_3
+    #define EAST_2_3
+    #define SOUTH_4_1
+    #define WEST_2_1
+  endif
+endif
 
 /* Base terrain for each region type. */
 #const GRASS_BASE 24 /* ROAD */
@@ -502,9 +1372,9 @@ end_random
 
 /* Determine which regions have corner lakes. */
 start_random
-  percent_chance 60 #define NO_LAKES
-  percent_chance 23 #define ONE_LAKE
-  percent_chance 17 #define TWO_LAKES
+  percent_chance 55 #define NO_LAKES
+  percent_chance 25 #define ONE_LAKE
+  percent_chance 20 #define TWO_LAKES
 end_random
 
 if ONE_LAKE
@@ -776,7 +1646,7 @@ enable_waves 0
 create_land {
   terrain_type WEST_BASE
   land_percent 100
-  land_position rnd(32,35) rnd(10,13)
+  land_position rnd(10,13) rnd(32,35)
   if WEST_1_2
     assign_to AT_COLOR 1 0 2
   elseif WEST_2_1
@@ -799,7 +1669,7 @@ create_land {
 create_land {
   terrain_type WEST_BASE
   land_percent 100
-  land_position rnd(10,13) rnd(32,35)
+  land_position rnd(32,35) rnd(10,13)
   if WEST_1_2
     assign_to AT_COLOR 2 0 2
   elseif WEST_2_1
@@ -868,7 +1738,7 @@ create_land {
 create_land {
   terrain_type SOUTH_BASE
   land_percent 100
-  land_position rnd(10,13) rnd(65,68)
+  land_position rnd(32,35) rnd(87,90)
   if SOUTH_1_2
     assign_to AT_COLOR 1 0 2
   elseif SOUTH_2_1
@@ -891,7 +1761,7 @@ create_land {
 create_land {
   terrain_type SOUTH_BASE
   land_percent 100
-  land_position rnd(32,35) rnd(87,90)
+  land_position rnd(10,13) rnd(65,68)
   if SOUTH_1_2
     assign_to AT_COLOR 2 0 2
   elseif SOUTH_2_1
@@ -914,7 +1784,7 @@ create_land {
 create_land {
   terrain_type EAST_BASE
   land_percent 100
-  land_position rnd(65,68) rnd(87,90)
+  land_position rnd(87,90) rnd(65,68)
   if EAST_1_2
     assign_to AT_COLOR 1 0 2
   elseif EAST_2_1
@@ -937,7 +1807,7 @@ create_land {
 create_land {
   terrain_type EAST_BASE
   land_percent 100
-  land_position rnd(87,90) rnd(65,68)
+  land_position rnd(65,68) rnd(87,90)
   if EAST_1_2
     assign_to AT_COLOR 2 0 2
   elseif EAST_2_1

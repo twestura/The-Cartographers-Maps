@@ -155,6 +155,8 @@ create_object FISHING_SHIP {
   set_tight_grouping
   min_distance_to_map_edge 10
   temp_min_distance_group_placement 10
+  group_placement_radius 2
+  avoid_forest_zone 2
   max_distance_to_players 70
   min_distance_group_placement 2
   set_place_for_every_player
@@ -170,6 +172,7 @@ create_object VILLAGER {
   set_loose_grouping
   set_place_for_every_player
   temp_min_distance_group_placement 15
+  avoid_forest_zone 3
   max_distance_to_players 70
   min_distance_to_map_edge 10
   min_distance_group_placement 2

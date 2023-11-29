@@ -30,24 +30,41 @@ end_random
 if PH_SPRING
   #const HERDABLE_A 594 /* SHEEP */
   #const HERDABLE_B 1245 /* DLC_PIG */
+  #const PREDATOR_A 126 /* WOLF */
 elseif PH_ALPINE
   #const HERDABLE_A 594 /* SHEEP */
   #const HERDABLE_B 1245 /* DLC_PIG */
+  #const PREDATOR_A 126 /* WOLF */
 elseif PH_TROPHICALSOUTH
+  /* This region is south american, not southeast asian. */
   #const HERDABLE_A 833 /* TURKEY */
   #const HERDABLE_B 305 /* DLC_LLAMA */
+  start_random
+    percent_chance 50 #const PREDATOR_A 812 /* JAGUAR */
+    percent_chance 50 #const PREDATOR_A 1031 /* DLC_CROCODILE */
+  end_random
+  /* Jungle trees, not rainforest. */
+  #const WOODIES 17 /* JUNGLE */
+  /* Stragglers are 414 JUNGLETREE already. */
 elseif PH_ASIAN
   #const HERDABLE_A 594 /* SHEEP */
   #const HERDABLE_B 1245 /* DLC_PIG */
+  start_random
+    percent_chance 50 #const PREDATOR_A 1135 /* DLC_KOMODO */
+    percent_chance 50 #const PREDATOR_A 1137 /* DLC_TIGER */
+  end_random
 elseif PH_AUTUMN
   #const HERDABLE_A 594 /* SHEEP */
   #const HERDABLE_B 1245 /* DLC_PIG */
+  #const PREDATOR_A 126 /* WOLF */
 elseif PH_FROZEN
   #const HERDABLE_A 594 /* SHEEP */
   #const HERDABLE_B 1060 /* DLC_GOAT */
+  #const PREDATOR_A 1241 /* DLC_SNOWLEOPARD */
 elseif PH_MEDISOUTH
   #const HERDABLE_A 594 /* SHEEP */
   #const HERDABLE_B 1245 /* DLC_PIG */
+  #const PREDATOR_A 126 /* WOLF */
 endif
 
 #const PHLAND 647 /* Constable Richemont (Dead) Land-only placeholder. */
@@ -344,7 +361,7 @@ create_object RELIC {
   set_gaia_object_only
   number_of_objects 3
   min_distance_group_placement 5
-  temp_min_distance_group_placement 16
+  temp_min_distance_group_placement 14
   avoid_forest_zone 6
   max_distance_to_other_zones 7
   min_distance_to_players 20
@@ -357,7 +374,7 @@ create_object RELIC {
   set_gaia_object_only
   number_of_objects 3
   min_distance_group_placement 5
-  temp_min_distance_group_placement 16
+  temp_min_distance_group_placement 14
   avoid_forest_zone 6
   max_distance_to_other_zones 7
   min_distance_to_players 20

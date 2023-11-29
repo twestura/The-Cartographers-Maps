@@ -495,7 +495,8 @@ end_random
  #const THIRD_BASE 6    /* DIRT_A */
  #const PLAYER_TERRAIN 11  /* DIRT_B */
  #const PLAYER_FOREST 48   /* FOREST_DRAGON */
- #const SECOND_FOREST 18   /* FOREST_BAMBOO */
+ /* Was originally 18 FOREST_BAMBOO */
+ #const SECOND_FOREST 13   /* FOREST_PALM */
 
  #const LAND_PLACEHOLDER 6  /* DIRT_A */
  #const FOREST_PLACEHOLDER 25 /* ROAD_BROKEN */
@@ -504,7 +505,7 @@ end_random
  #const HERDABLE_B 594   /* SHEEP */
  #const LUREABLE_A 48 /* BOAR */
  #const SHRUB 1059    /* FRUIT_BUSH */
- #const STRAGGLER 1052   /* TREE_DRAGON */
+ #const STRAGGLER 1051   /* TREE_DRAGON */
  #const STRAGGLER_B 1052   /* TREE_BAOBAB */
  #const STRAGGLER_C 1052   /* TREE_BAOBAB */
  #const BIRD_A 1305    /* VULTURE */
@@ -1471,7 +1472,7 @@ create_object SEAGULLS {
 
 create_object BIRD_A {
   set_scaling_to_map_size
-  number_of_objects 8
+  number_of_objects 6
   temp_min_distance_group_placement 25
 }
 
